@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H&H Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">H<span class="amp">&</span>H</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <main class="hero">
+
+    <!-- Animated background -->
+    <div class="bg-canvas">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <svg class="grid-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,200,180,0.07)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+      <div class="scan-line"></div>
+    </div>
+
+    <!-- Decorative rings -->
+    <div class="rings-container">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-3"></div>
+      <div class="ring ring-4"></div>
+      <!-- Central symbol -->
+      <div class="center-symbol">
+        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+          <!-- Venus symbol stylized -->
+          <circle cx="50" cy="45" r="28" fill="none" stroke="url(#venusGrad)" stroke-width="2.5"/>
+          <line x1="50" y1="73" x2="50" y2="105" stroke="url(#venusGrad)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="34" y1="89" x2="66" y2="89" stroke="url(#venusGrad)" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Inner pulse rings -->
+          <circle cx="50" cy="45" r="18" fill="none" stroke="rgba(255,160,130,0.3)" stroke-width="1" class="pulse-ring"/>
+          <circle cx="50" cy="45" r="8" fill="rgba(255,160,130,0.15)" stroke="rgba(255,200,180,0.6)" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="venusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffb4a2"/>
+              <stop offset="100%" stop-color="#e8a598"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-content">
+      <div class="eyebrow">Est. 2026 · Women's Health Technology</div>
+      <h1 class="hero-title">
+        <span class="title-line-1">H<span class="amp-large">&</span>H</span>
+        <span class="title-line-2">Wellness</span>
+      </h1>
+      <p class="hero-sub">Creating the future of<br/><em>women's healthcare</em></p>
+      <div class="cta-row">
+        <a href="about.html" class="btn-primary">Meet the Team</a>
+        <span class="cta-divider"></span>
+        <a href="#" class="btn-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Corner decorations -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-br"></div>
+
+    <!-- Bottom data strip -->
+    <div class="data-strip">
+      <span class="data-item"><span class="dot"></span> Innovation</span>
+      <span class="data-item"><span class="dot dot-2"></span> Precision Medicine</span>
+      <span class="data-item"><span class="dot dot-3"></span> Women-First Design</span>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
