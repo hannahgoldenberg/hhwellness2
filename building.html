@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now Building — H&H Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="building-page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">H<span class="amp">&</span>H</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="building.html" class="active">Now Building</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <section class="building-hero">
+    <div class="bg-canvas">
+      <div class="orb orb-1" style="top:-5%;left:70%;"></div>
+      <div class="orb orb-2" style="bottom:5%;left:-8%;"></div>
+      <div class="orb orb-3" style="top:50%;left:40%;"></div>
+      <svg class="grid-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="grid3" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(200,112,94,0.055)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid3)" />
+      </svg>
+    </div>
+
+    <!-- Header -->
+    <div class="building-header">
+      <div class="eyebrow">H&H Wellness · Patent Pending</div>
+      <h1 class="page-title">
+        Now<br/><em>Building</em>
+      </h1>
+      <p>Two devices designed to address the gaps where women's healthcare has long been underserved — one for everyday independence, one for critical care.</p>
+    </div>
+
+    <!-- Products grid -->
+    <div class="products-grid">
+
+      <!-- Product 1: HairHelper -->
+      <div class="product-card card-rose">
+        <div class="patent-badge rose">Patent Pending</div>
+
+        <div class="product-icon">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+            <!-- Stylized hair tie / mobility aid icon -->
+            <circle cx="32" cy="20" r="13" fill="none" stroke="#c9705e" stroke-width="2"/>
+            <circle cx="32" cy="20" r="7" fill="none" stroke="#e8a598" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <!-- arm reaching up -->
+            <path d="M 20 44 Q 24 34 32 33" fill="none" stroke="#c9705e" stroke-width="2" stroke-linecap="round"/>
+            <!-- assistive arc -->
+            <path d="M 38 28 Q 46 22 44 36 Q 42 44 36 46" fill="none" stroke="#e8a598" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3,3"/>
+            <circle cx="32" cy="20" r="2.5" fill="#c9705e" opacity="0.7"/>
+          </svg>
+        </div>
+
+        <h2 class="product-name">HairHelper</h2>
+        <div class="product-subtitle">by H&H Wellness</div>
+        <div class="product-divider"></div>
+
+        <p class="product-desc">
+          A thoughtfully engineered hair tie designed for individuals with shoulder mobility limitations — from <em>frozen shoulder</em> to quadriplegia. HairHelper restores the simple, dignified act of styling one's own hair without assistance.
+        </p>
+
+        <p class="product-desc">
+          Engineered to require minimal arm elevation and hand dexterity, HairHelper works with the body, not against it — preserving independence at every stage of mobility.
+        </p>
+
+        <div class="product-tags">
+          <span class="tag tag-rose">Mobility Aid</span>
+          <span class="tag tag-rose">Frozen Shoulder</span>
+          <span class="tag tag-rose">Spinal Cord Injury</span>
+          <span class="tag tag-rose">Adaptive Design</span>
+          <span class="tag tag-rose">Daily Living</span>
+        </div>
+      </div>
+
+      <!-- Product 2: Caesarean Delivery Glove -->
+      <div class="product-card card-sage">
+        <div class="patent-badge sage">Patent Pending</div>
+
+        <div class="product-icon">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+            <!-- Medical glove / hand silhouette -->
+            <path d="M 22 52 L 20 30 Q 20 26 24 26 L 24 18 Q 24 14 28 14 L 28 12 Q 28 8 32 8 Q 36 8 36 12 L 36 14 Q 40 14 40 18 L 40 26 Q 44 26 44 30 L 42 52 Q 42 56 32 56 Q 22 56 22 52 Z" fill="none" stroke="#8aab96" stroke-width="2" stroke-linejoin="round"/>
+            <!-- finger lines -->
+            <line x1="28" y1="14" x2="28" y2="26" stroke="#8aab96" stroke-width="1" opacity="0.5"/>
+            <line x1="32" y1="12" x2="32" y2="26" stroke="#8aab96" stroke-width="1" opacity="0.5"/>
+            <line x1="36" y1="14" x2="36" y2="26" stroke="#8aab96" stroke-width="1" opacity="0.5"/>
+            <!-- cross symbol -->
+            <line x1="29" y1="39" x2="35" y2="39" stroke="#8aab96" stroke-width="2" stroke-linecap="round"/>
+            <line x1="32" y1="36" x2="32" y2="42" stroke="#8aab96" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <h2 class="product-name">Caesarean Delivery Glove</h2>
+        <div class="product-subtitle">by H&H Wellness</div>
+        <div class="product-divider"></div>
+
+        <p class="product-desc">
+          A precision surgical tool for use during C-sections involving <em>impacted fetal head complications</em> — specifically in cases with dilation greater than 7 cm.
+        </p>
+
+        <p class="product-desc">
+          Designed to help clinicians improve efficiency and outcomes during one of obstetrics' most challenging intraoperative scenarios, reducing risk to both mother and child in time-critical situations.
+        </p>
+
+        <div class="product-tags">
+          <span class="tag tag-sage">Surgical Device</span>
+          <span class="tag tag-sage">Obstetrics</span>
+          <span class="tag tag-sage">C-Section</span>
+          <span class="tag tag-sage">Impacted Fetal Head</span>
+          <span class="tag tag-sage">Clinical Outcomes</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-br"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
