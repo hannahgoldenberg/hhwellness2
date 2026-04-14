@@ -13,7 +13,10 @@
 
   <!-- NAV -->
   <nav class="nav">
-    <div class="nav-logo">H<span class="amp">&</span>H</div>
+    <div class="nav-brand">
+      <div class="nav-logo">H<span class="amp">&</span>H</div>
+      <div class="nav-tagline">Empowering Health Technology</div>
+    </div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="building.html">Now Building</a></li>
@@ -33,7 +36,7 @@
       <svg class="grid-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
         <defs>
           <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(200,112,94,0.06)" stroke-width="1"/>
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(94,42,138,0.06)" stroke-width="1"/>
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#grid)" />
@@ -47,20 +50,50 @@
       <div class="ring ring-2"></div>
       <div class="ring ring-3"></div>
       <div class="ring ring-4"></div>
-      <!-- Central symbol -->
+      <!-- Central symbol: DNA helix with femtech motif -->
       <div class="center-symbol">
-        <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="45" r="28" fill="none" stroke="url(#venusGrad)" stroke-width="2"/>
-          <line x1="50" y1="73" x2="50" y2="105" stroke="url(#venusGrad)" stroke-width="2" stroke-linecap="round"/>
-          <line x1="34" y1="89" x2="66" y2="89" stroke="url(#venusGrad)" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="50" cy="45" r="18" fill="none" stroke="rgba(200,112,94,0.3)" stroke-width="1" class="pulse-ring"/>
-          <circle cx="50" cy="45" r="8" fill="rgba(200,112,94,0.08)" stroke="rgba(200,112,94,0.5)" stroke-width="1.5"/>
+        <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="venusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#e8a598"/>
-              <stop offset="100%" stop-color="#c9705e"/>
+              <stop offset="0%" stop-color="#d688c0"/>
+              <stop offset="100%" stop-color="#5e2a8a"/>
+            </linearGradient>
+            <linearGradient id="venusGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#9b6ec8"/>
+              <stop offset="100%" stop-color="#d688c0"/>
             </linearGradient>
           </defs>
+
+          <!-- DNA left strand (sinusoidal) -->
+          <path d="M 38 8 Q 28 20, 38 32 Q 48 44, 38 56 Q 28 68, 38 80 Q 48 92, 38 104" fill="none" stroke="url(#venusGrad)" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- DNA right strand -->
+          <path d="M 62 8 Q 72 20, 62 32 Q 52 44, 62 56 Q 72 68, 62 80 Q 52 92, 62 104" fill="none" stroke="url(#venusGrad2)" stroke-width="2.2" stroke-linecap="round"/>
+
+          <!-- Cross rungs connecting the strands -->
+          <line x1="38" y1="14" x2="62" y2="14" stroke="rgba(155,110,200,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="38" y1="26" x2="62" y2="26" stroke="rgba(214,136,192,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="38" y1="38" x2="62" y2="38" stroke="rgba(155,110,200,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="38" y1="50" x2="62" y2="50" stroke="rgba(214,136,192,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="38" y1="62" x2="62" y2="62" stroke="rgba(155,110,200,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="38" y1="74" x2="62" y2="74" stroke="rgba(214,136,192,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="38" y1="86" x2="62" y2="86" stroke="rgba(155,110,200,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="38" y1="98" x2="62" y2="98" stroke="rgba(214,136,192,0.55)" stroke-width="1.2" stroke-linecap="round"/>
+
+          <!-- Nodes on left strand -->
+          <circle cx="38" cy="14" r="3" fill="#5e2a8a" opacity="0.85"/>
+          <circle cx="38" cy="38" r="3" fill="#d688c0" opacity="0.85"/>
+          <circle cx="38" cy="62" r="3" fill="#5e2a8a" opacity="0.85"/>
+          <circle cx="38" cy="86" r="3" fill="#d688c0" opacity="0.85"/>
+          <!-- Nodes on right strand -->
+          <circle cx="62" cy="26" r="3" fill="#9b6ec8" opacity="0.85"/>
+          <circle cx="62" cy="50" r="3" fill="#d688c0" opacity="0.85"/>
+          <circle cx="62" cy="74" r="3" fill="#9b6ec8" opacity="0.85"/>
+          <circle cx="62" cy="98" r="3" fill="#d688c0" opacity="0.85"/>
+
+          <!-- Small Venus ♀ symbol at top, femininity motif -->
+          <circle cx="50" cy="116" r="8" fill="none" stroke="url(#venusGrad)" stroke-width="1.5" class="pulse-ring"/>
+          <line x1="50" y1="124" x2="50" y2="130" stroke="url(#venusGrad)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="44" y1="127" x2="56" y2="127" stroke="url(#venusGrad)" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </div>
     </div>
@@ -73,6 +106,15 @@
         <span class="title-line-2">Wellness</span>
       </h1>
       <p class="hero-sub">Creating the future of<br/><em>women's healthcare</em></p>
+
+      <!-- Launch announcement -->
+      <div class="launch-banner">
+        <span class="launch-badge">🚀 Launching</span>
+        <span class="launch-text"><strong>HairHelper</strong> — July 1, 2026</span>
+        <span class="launch-divider"></span>
+        <span class="launch-waitlist">Waitlist Coming Soon</span>
+      </div>
+
       <div class="cta-row">
         <a href="building.html" class="btn-primary">Now Building</a>
         <span class="cta-divider"></span>
