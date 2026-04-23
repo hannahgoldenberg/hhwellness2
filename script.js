@@ -2,6 +2,27 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ── Hamburger menu ──
+  const hamburger = document.querySelector('.nav-hamburger');
+  const drawer = document.querySelector('.nav-drawer');
+
+  if (hamburger && drawer) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('is-open');
+      drawer.classList.toggle('is-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close on drawer link click
+    drawer.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        drawer.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
   // ── Stagger in nav links ──
   const navLinks = document.querySelectorAll('.nav-links li');
   navLinks.forEach((li, i) => {

@@ -51,6 +51,88 @@ html, body {
   border-bottom: 1px solid var(--border);
 }
 
+/* Hamburger button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 101;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--blush-deep);
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.35s ease, width 0.35s ease;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+.nav-hamburger.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.nav-hamburger.is-open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile nav drawer */
+.nav-drawer {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(245,243,249,0.97);
+  backdrop-filter: blur(16px);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-drawer.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.nav-drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-drawer-links a {
+  text-decoration: none;
+  font-family: var(--font-label);
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cream-mid);
+  transition: color 0.3s;
+}
+
+.nav-drawer-links a:hover,
+.nav-drawer-links a.active {
+  color: var(--blush-deep);
+}
+
 .nav-logo {
   font-family: var(--font-label);
   font-size: 1rem;
@@ -943,30 +1025,116 @@ html, body {
    RESPONSIVE
    ============================================= */
 @media (max-width: 768px) {
+  /* Show hamburger, hide desktop links */
+  .nav-hamburger { display: flex; }
+  .nav-links { display: none; }
+  .nav-drawer { display: flex; }
+
+  .nav { padding: 1.2rem 1.5rem; }
+
+  /* Products */
   .products-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Mission stats */
   .mission-stat-row {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Mission blocks */
   .mission-block {
     flex-direction: column;
     gap: 1rem;
     padding: 2rem 1.8rem;
   }
+
+  /* Hero rings — scale down on mobile */
+  .ring-3 { width: 340px; height: 340px; }
+  .ring-4 { width: 480px; height: 480px; }
+
+  /* Launch banner — stack on small screens */
+  .launch-banner {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 0.9rem 1.2rem;
+    max-width: 90vw;
+  }
+
+  .launch-divider { display: none; }
+
+  /* CTA row */
+  .cta-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cta-divider { display: none; }
+
+  /* Data strip */
+  .data-strip {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+  }
+
+  /* Building page header */
+  .building-header { margin-bottom: 3rem; }
+  .building-header p { font-size: 1rem; }
+
+  /* Mission header */
+  .mission-header { margin-bottom: 3rem; }
+
+  /* About */
+  .founders-card { padding: 2rem 1.5rem; }
 }
 
-@media (max-width: 640px) {
-  .nav { padding: 1.2rem 1.5rem; }
-  .nav-links { gap: 1.5rem; }
+@media (max-width: 480px) {
+  .nav { padding: 1rem 1.2rem; }
+
   .corner-tl { top: 4.5rem; left: 1rem; }
-  .data-strip { gap: 1.2rem; }
-  .founders-card { padding: 2rem 1.5rem; }
-  .pillars { gap: 1.5rem; }
+  .corner-br { bottom: 1.5rem; right: 1rem; }
+
+  /* Mission stats — single column */
   .mission-stat-row { grid-template-columns: 1fr; }
-  .products-grid { gap: 1.5rem; }
-  .product-card { padding: 2rem 1.5rem; }
+
+  /* Products */
+  .products-grid { gap: 1.2rem; }
+  .product-card { padding: 1.8rem 1.4rem; }
+
+  /* Pillars */
+  .pillars { gap: 1.5rem; }
+
+  /* Mission block tighter */
+  .mission-block { padding: 1.5rem 1.2rem; }
+
+  /* Hero data strip */
+  .data-strip {
+    gap: 0.8rem;
+    bottom: 1.2rem;
+  }
+  .data-item { font-size: 0.58rem; }
+
+  /* Hero title tweak */
+  .title-line-2 { letter-spacing: 0.35em; }
+
+  /* Building/Mission page padding */
+  .building-hero,
+  .mission-hero { padding: 6.5rem 1.2rem 4rem; }
+
+  .about-hero { padding: 6.5rem 1.2rem 4rem; }
+
+  /* Stat cards */
+  .stat-card { padding: 1.5rem 1rem; }
+  .stat-num { font-size: 2rem; }
+
+  /* Founders */
+  .founders-names { font-size: clamp(1.2rem, 7vw, 1.8rem); }
 }
+
 
 /* ---- NAV TAGLINE ---- */
 .nav-tagline {
