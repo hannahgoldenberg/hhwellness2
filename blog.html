@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — HairHelper by H&H Wellness | Adaptive Hair Ties for Limited Mobility</title>
+  <meta name="description" content="Learn about adaptive hair accessories for women with frozen shoulder, stroke recovery, and shoulder injuries. HairHelper by H&H Wellness launches June 2026." />
+  <meta name="keywords" content="adaptive hair tie, hair tie for frozen shoulder, hair tie for limited mobility, HairHelper, women's adaptive accessories, frozen shoulder hair styling, stroke recovery hair tools, shoulder injury daily living aids" />
+  <meta property="og:title" content="HairHelper Blog — Adaptive Hair Care for Every Woman" />
+  <meta property="og:description" content="Insights on adaptive design, women's mobility health, and the story behind HairHelper — the first hair tie built for women with shoulder limitations." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Blog page styles ── */
+    .blog-hero {
+      min-height: 44vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 7rem 6vw 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero-content { position: relative; z-index: 2; }
+    .blog-hero h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(2.2rem,5vw,4rem); font-weight: 700; letter-spacing: .04em; margin: .4rem 0 1rem; }
+    .blog-hero h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; }
+    .blog-hero p.lead { max-width: 520px; color: rgba(255,255,255,.65); font-size: .95rem; line-height: 1.7; }
+
+    /* ── Layout ── */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      padding: 3rem 6vw 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 860px) { .blog-layout { grid-template-columns: 1fr; } .blog-sidebar { display: none; } }
+
+    /* ── Article cards ── */
+    .blog-feed { display: flex; flex-direction: column; gap: 2.5rem; }
+
+    .blog-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: border-color .3s, transform .3s;
+    }
+    .blog-card:hover { border-color: rgba(214,136,192,.35); transform: translateY(-3px); }
+
+    .blog-card-inner { padding: 2rem 2rem 1.6rem; }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: 1rem;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+    }
+    .blog-tag {
+      padding: .2rem .65rem;
+      border-radius: 20px;
+      font-size: .65rem;
+      letter-spacing: .1em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .tag-mobility { background: rgba(201,112,94,.15); color: #e8a598; border: 1px solid rgba(201,112,94,.3); }
+    .tag-design   { background: rgba(155,110,200,.15); color: #c4a0e8; border: 1px solid rgba(155,110,200,.3); }
+    .tag-health   { background: rgba(214,136,192,.15); color: #d688c0; border: 1px solid rgba(214,136,192,.3); }
+
+    .blog-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 400;
+      line-height: 1.25;
+      margin: 0 0 .8rem;
+      color: #fff;
+    }
+    .blog-card h2 em { font-style: italic; color: #d688c0; }
+
+    .blog-card p {
+      color: rgba(255,255,255,.6);
+      font-size: .9rem;
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+    }
+
+    .blog-card-divider { height: 1px; background: rgba(255,255,255,.07); margin: 0 2rem; }
+
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    .read-more {
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #d688c0;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(214,136,192,.3);
+      padding-bottom: 1px;
+      transition: color .2s, border-color .2s;
+    }
+    .read-more:hover { color: #fff; border-color: #fff; }
+
+    .read-time { font-size: .72rem; color: rgba(255,255,255,.3); letter-spacing: .08em; }
+
+    /* ── Featured card (first) ── */
+    .blog-card.featured { border-color: rgba(214,136,192,.2); }
+    .blog-card.featured .blog-card-inner { padding: 2.4rem 2.4rem 1.8rem; }
+    .blog-card.featured h2 { font-size: clamp(1.7rem,3vw,2.3rem); }
+    .featured-label {
+      display: inline-block;
+      font-size: .65rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #d688c0;
+      border: 1px solid rgba(214,136,192,.4);
+      border-radius: 2px;
+      padding: .2rem .7rem;
+      margin-bottom: .8rem;
+    }
+
+    /* ── Diagram in article ── */
+    .inline-diagram {
+      margin: 1.4rem 0;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 4px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .inline-diagram figcaption {
+      font-size: .73rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+      margin-top: .8rem;
+    }
+
+    /* ── Sidebar ── */
+    .blog-sidebar { display: flex; flex-direction: column; gap: 1.8rem; }
+    .sidebar-widget {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 2px;
+      padding: 1.4rem;
+    }
+    .sidebar-widget h3 {
+      font-family: 'Syncopate', sans-serif;
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin: 0 0 1rem;
+    }
+    .sidebar-widget ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .6rem; }
+    .sidebar-widget ul li a {
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      font-size: .85rem;
+      line-height: 1.5;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding-bottom: .6rem;
+      display: block;
+      transition: color .2s;
+    }
+    .sidebar-widget ul li:last-child a { border-bottom: none; padding-bottom: 0; }
+    .sidebar-widget ul li a:hover { color: #d688c0; }
+
+    .keyword-cloud { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .kw-pill {
+      font-size: .68rem;
+      letter-spacing: .07em;
+      padding: .3rem .7rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      color: rgba(255,255,255,.5);
+      cursor: default;
+      transition: background .2s, color .2s;
+    }
+    .kw-pill:hover { background: rgba(214,136,192,.15); color: #d688c0; border-color: rgba(214,136,192,.3); }
+
+    .waitlist-widget {
+      background: linear-gradient(135deg, rgba(94,42,138,.3), rgba(214,136,192,.1));
+      border: 1px solid rgba(214,136,192,.25);
+    }
+    .waitlist-widget p { font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.6; margin: 0 0 1rem; }
+    .waitlist-btn {
+      display: block;
+      text-align: center;
+      padding: .65rem;
+      background: linear-gradient(135deg, #5e2a8a, #d688c0);
+      color: #fff;
+      text-decoration: none;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: opacity .2s;
+    }
+    .waitlist-btn:hover { opacity: .85; }
+
+    /* ── Schema-friendly article section ── */
+    article.full-preview { /* Semantic richness for Google */ }
+  </style>
+</head>
+<body class="building-page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-brand"><div class="nav-logo">H<span class="amp">&</span>H</div><div class="nav-tagline">Empowering Health Technology</div></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="building.html">Now Building</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-drawer">
+    <ul class="nav-drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="building.html">Now Building</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+    </ul>
+  </div>
+
+  <!-- BLOG HERO -->
+  <section class="blog-hero">
+    <div class="bg-canvas">
+      <div class="orb orb-1" style="top:-5%;left:70%;"></div>
+      <div class="orb orb-2" style="bottom:5%;left:-8%;"></div>
+      <svg class="grid-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="gridB" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(94,42,138,0.06)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#gridB)" />
+      </svg>
+    </div>
+    <div class="blog-hero-content">
+      <div class="eyebrow">H&H Wellness · Journal</div>
+      <h1>The <em>HairHelper</em><br/>Blog</h1>
+      <p class="lead">Research, design thinking, and real stories behind the world's first adaptive hair tie for women with shoulder mobility challenges.</p>
+    </div>
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-br"></div>
+  </section>
+
+  <!-- BLOG LAYOUT -->
+  <div class="blog-layout">
+
+    <!-- MAIN FEED -->
+    <main class="blog-feed" role="main">
+
+      <!-- POST 1: Featured — What is HairHelper -->
+      <article class="blog-card featured" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="blog-card-inner">
+          <span class="featured-label">✦ Featured</span>
+          <div class="blog-card-meta">
+            <span class="blog-tag tag-mobility">Adaptive Design</span>
+            <span>May 2026</span>
+          </div>
+          <h2 itemprop="headline">Introducing <em>HairHelper</em>: The First Hair Tie Designed for Women with Shoulder Mobility Limitations</h2>
+          <p itemprop="description">
+            For most people, putting their hair up takes seconds. For women living with frozen shoulder, recovering from a stroke, or navigating life after shoulder surgery, the act of raising their arms above their head to style their hair can be painful, exhausting, or simply impossible. HairHelper was built for them.
+          </p>
+          <p>
+            Developed by H&H Wellness — a sibling-founded femtech company — HairHelper is a patent-pending adaptive hair tie that functions as a hybrid between a scrunchie and a headband. Instead of requiring the wearer to reach overhead and loop a tie through their hair multiple times, HairHelper slides on over the head like a headband, is moved to the crown, and secured with a single press-and-pull motion. No high reaches. No repetitive overhead movements. No need for assistance.
+          </p>
+
+          <!-- Usage Diagram -->
+          <figure class="inline-diagram" aria-label="HairHelper usage steps diagram">
+            <svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:560px">
+              <defs>
+                <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#d688c0"/>
+                  <stop offset="100%" stop-color="#5e2a8a"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Step 1 -->
+              <g transform="translate(28,10)">
+                <circle cx="60" cy="45" r="28" fill="none" stroke="url(#stepGrad)" stroke-width="1.5"/>
+                <!-- head oval -->
+                <ellipse cx="60" cy="35" rx="16" ry="19" fill="none" stroke="rgba(214,136,192,0.6)" stroke-width="1.2"/>
+                <!-- HairHelper as headband over head -->
+                <ellipse cx="60" cy="28" rx="22" ry="10" fill="none" stroke="#d688c0" stroke-width="2" stroke-dasharray="4,2"/>
+                <text x="60" y="86" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="0.08em">STEP 1</text>
+                <text x="60" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)">Slip on like</text>
+                <text x="60" y="107" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)">a headband</text>
+              </g>
+
+              <!-- Arrow 1→2 -->
+              <text x="142" y="55" font-size="18" fill="rgba(214,136,192,0.5)" text-anchor="middle">›</text>
+
+              <!-- Step 2 -->
+              <g transform="translate(158,10)">
+                <circle cx="60" cy="45" r="28" fill="none" stroke="url(#stepGrad)" stroke-width="1.5"/>
+                <ellipse cx="60" cy="40" rx="16" ry="19" fill="none" stroke="rgba(214,136,192,0.6)" stroke-width="1.2"/>
+                <!-- HairHelper at crown -->
+                <ellipse cx="60" cy="24" rx="18" ry="7" fill="none" stroke="#d688c0" stroke-width="2"/>
+                <line x1="52" y1="24" x2="52" y2="14" stroke="rgba(214,136,192,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+                <line x1="68" y1="24" x2="68" y2="14" stroke="rgba(214,136,192,0.4)" stroke-width="1" stroke-dasharray="2,2"/>
+                <!-- Crown indicator arrows -->
+                <path d="M56 18 L60 13 L64 18" fill="none" stroke="rgba(214,136,192,0.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="60" y="86" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="0.08em">STEP 2</text>
+                <text x="60" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)">Slide to</text>
+                <text x="60" y="107" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)">crown of head</text>
+              </g>
+
+              <!-- Arrow 2→3 -->
+              <text x="272" y="55" font-size="18" fill="rgba(214,136,192,0.5)" text-anchor="middle">›</text>
+
+              <!-- Step 3: clasp + cords -->
+              <g transform="translate(288,10)">
+                <circle cx="60" cy="45" r="28" fill="none" stroke="url(#stepGrad)" stroke-width="1.5"/>
+                <ellipse cx="60" cy="40" rx="16" ry="19" fill="none" stroke="rgba(214,136,192,0.6)" stroke-width="1.2"/>
+                <!-- clasp at crown -->
+                <rect x="54" y="16" width="12" height="8" rx="2" fill="rgba(94,42,138,0.6)" stroke="#d688c0" stroke-width="1.2"/>
+                <!-- cords pulling out -->
+                <line x1="54" y1="20" x2="42" y2="20" stroke="#d688c0" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="66" y1="20" x2="78" y2="20" stroke="#d688c0" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- pull arrows -->
+                <path d="M44 17 L40 20 L44 23" fill="none" stroke="#d688c0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M76 17 L80 20 L76 23" fill="none" stroke="#d688c0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- press down arrow -->
+                <path d="M60 15 L60 11" stroke="rgba(214,136,192,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M57 13 L60 10 L63 13" fill="none" stroke="rgba(214,136,192,0.7)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180,60,11.5)"/>
+                <text x="60" y="86" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="0.08em">STEP 3</text>
+                <text x="60" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)">Press clasp,</text>
+                <text x="60" y="107" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)">pull cords</text>
+              </g>
+
+              <!-- Arrow 3→4 -->
+              <text x="402" y="55" font-size="18" fill="rgba(214,136,192,0.5)" text-anchor="middle">›</text>
+
+              <!-- Step 4: secured ponytail -->
+              <g transform="translate(418,10)">
+                <circle cx="60" cy="45" r="28" fill="none" stroke="url(#stepGrad)" stroke-width="1.5"/>
+                <ellipse cx="60" cy="40" rx="16" ry="19" fill="none" stroke="rgba(214,136,192,0.6)" stroke-width="1.2"/>
+                <!-- secured tie at crown -->
+                <ellipse cx="60" cy="22" rx="10" ry="6" fill="rgba(94,42,138,0.4)" stroke="#d688c0" stroke-width="1.5"/>
+                <!-- ponytail -->
+                <path d="M55 28 Q50 38 48 50 Q46 58 50 64" fill="none" stroke="rgba(214,136,192,0.5)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M65 28 Q70 38 72 50 Q74 58 70 64" fill="none" stroke="rgba(214,136,192,0.3)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M60 28 Q60 40 60 60" fill="none" stroke="rgba(214,136,192,0.4)" stroke-width="2" stroke-linecap="round"/>
+                <!-- check -->
+                <circle cx="85" cy="20" r="8" fill="rgba(94,42,138,0.5)" stroke="#d688c0" stroke-width="1"/>
+                <path d="M80 20 L84 24 L90 16" fill="none" stroke="#d688c0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="60" y="86" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="0.08em">DONE</text>
+                <text x="60" y="97" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)">Hair secured,</text>
+                <text x="60" y="107" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)">independently</text>
+              </g>
+            </svg>
+            <figcaption>HairHelper — 4-step application process designed for minimal arm elevation</figcaption>
+          </figure>
+
+          <p>
+            Launching June 2026, HairHelper is targeted at the millions of women living with frozen shoulder (adhesive capsulitis), post-stroke arm weakness, spinal cord injuries affecting upper limb function, and those recovering from shoulder surgery. It's a small product solving a daily frustration with outsized impact on dignity and independence.
+          </p>
+        </div>
+        <div class="blog-card-divider"></div>
+        <div class="blog-card-footer">
+          <a href="building.html" class="read-more">See Full Product Page →</a>
+          <span class="read-time">5 min read</span>
+        </div>
+      </article>
+
+      <!-- POST 2: Frozen Shoulder SEO post -->
+      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="blog-card-inner">
+          <div class="blog-card-meta">
+            <span class="blog-tag tag-health">Women's Health</span>
+            <span>May 2026</span>
+          </div>
+          <h2 itemprop="headline">What Is Frozen Shoulder — and Why Do Women Get It <em>More Often</em>?</h2>
+          <p itemprop="description">
+            Adhesive capsulitis, commonly known as frozen shoulder, affects an estimated 2–5% of the general population — but women, particularly those between ages 40 and 60, are disproportionately impacted. The condition causes the shoulder capsule to thicken and tighten, drastically limiting range of motion and making overhead movements painful or impossible.
+          </p>
+          <p>
+            The everyday consequences extend far beyond clinical symptoms. Women with frozen shoulder frequently report struggling with personal care tasks — washing hair, styling it, fastening a bra, reaching a shelf — that most people take for granted. These aren't medical emergencies, but they chip away at independence and self-esteem every single day.
+          </p>
+          <p>
+            HairHelper was designed with the frozen shoulder community specifically in mind. By eliminating the need for any overhead arm movement during hair styling, it returns one small but meaningful act of self-care to women who have had it taken from them.
+          </p>
+        </div>
+        <div class="blog-card-divider"></div>
+        <div class="blog-card-footer">
+          <a href="#" class="read-more">Read More →</a>
+          <span class="read-time">4 min read</span>
+        </div>
+      </article>
+
+      <!-- POST 3: Stroke recovery -->
+      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="blog-card-inner">
+          <div class="blog-card-meta">
+            <span class="blog-tag tag-mobility">Stroke Recovery</span>
+            <span>April 2026</span>
+          </div>
+          <h2 itemprop="headline">Hair Care After a Stroke: The <em>Daily Living</em> Gap Nobody Talks About</h2>
+          <p itemprop="description">
+            Stroke rehabilitation programs cover speech, walking, and gross motor recovery — but the granular, daily-living challenges that women face are rarely addressed. For women who experience hemiplegia or reduced upper limb mobility following a stroke, hair care becomes an unexpectedly significant obstacle.
+          </p>
+          <p>
+            Occupational therapists often recommend adaptive tools for dressing, eating, and bathing — but adaptive hair accessories have historically been an afterthought. HairHelper is designed as a genuine ADL (Activities of Daily Living) aid: minimal dexterity required, one-handed compatible, and engineered to be used without assistance.
+          </p>
+          <p>
+            We've spoken with OTs, stroke survivors, and caregivers in building this product. The need is real, and the solutions available today simply aren't good enough.
+          </p>
+        </div>
+        <div class="blog-card-divider"></div>
+        <div class="blog-card-footer">
+          <a href="#" class="read-more">Read More →</a>
+          <span class="read-time">5 min read</span>
+        </div>
+      </article>
+
+      <!-- POST 4: Design post -->
+      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="blog-card-inner">
+          <div class="blog-card-meta">
+            <span class="blog-tag tag-design">Design Process</span>
+            <span>March 2026</span>
+          </div>
+          <h2 itemprop="headline">How We Designed a Hair Tie for <em>Minimal Arm Elevation</em> — The Engineering Behind HairHelper</h2>
+          <p itemprop="description">
+            Most hair ties require the user to reach above their head, thread the tie through their hair, and loop it multiple times. Each of those motions requires significant shoulder range of motion — typically 150°+ of abduction. HairHelper was engineered to reduce that requirement dramatically.
+          </p>
+          <p>
+            The hybrid headband-scrunchie form factor allows the user to place the device over the head at face level, then use natural forward neck tilt to position it toward the crown. The clasp-and-cord tightening mechanism is operated at the back of the crown — still elevated, but far below the range required for traditional styling. Our goal was to make the motion feel intuitive on the first try, even for users with significant limitations.
+          </p>
+          <p>
+            The result is a patent-pending mechanism that we believe is the first of its kind in adaptive hair accessories.
+          </p>
+        </div>
+        <div class="blog-card-divider"></div>
+        <div class="blog-card-footer">
+          <a href="#" class="read-more">Read More →</a>
+          <span class="read-time">6 min read</span>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="blog-sidebar" aria-label="Blog sidebar">
+
+      <div class="sidebar-widget waitlist-widget">
+        <h3>Launching June 2026</h3>
+        <p>HairHelper is the world's first adaptive hair tie for women with shoulder mobility limitations. Join the waitlist.</p>
+        <a href="building.html" class="waitlist-btn">Join the Waitlist</a>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>Recent Posts</h3>
+        <ul>
+          <li><a href="#">Introducing HairHelper: The First Adaptive Hair Tie</a></li>
+          <li><a href="#">What Is Frozen Shoulder and Why Do Women Get It More?</a></li>
+          <li><a href="#">Hair Care After a Stroke: The Gap Nobody Talks About</a></li>
+          <li><a href="#">Engineering HairHelper for Minimal Arm Elevation</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>Topics</h3>
+        <div class="keyword-cloud">
+          <span class="kw-pill">Frozen Shoulder</span>
+          <span class="kw-pill">Adaptive Design</span>
+          <span class="kw-pill">Stroke Recovery</span>
+          <span class="kw-pill">Shoulder Mobility</span>
+          <span class="kw-pill">Women's Health</span>
+          <span class="kw-pill">ADL Tools</span>
+          <span class="kw-pill">FemTech</span>
+          <span class="kw-pill">Disability Aid</span>
+          <span class="kw-pill">HairHelper</span>
+          <span class="kw-pill">Hair Care</span>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>About H&H Wellness</h3>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.65;margin:0">
+          Founded by siblings Hannah and Harrison, H&H Wellness is a femtech company dedicated to solving the neglected problems affecting women worldwide — starting with HairHelper.
+        </p>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="text-align:center;padding:2rem 6vw;border-top:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.3);font-size:.75rem;letter-spacing:.1em;">
+    © 2026 H&amp;H Wellness. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Structured Data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "H&H Wellness Blog",
+    "description": "Research, design thinking, and stories behind HairHelper — the first adaptive hair tie for women with shoulder mobility challenges.",
+    "url": "https://hhwellness.com/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "H&H Wellness",
+      "foundingDate": "2026"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Introducing HairHelper: The First Hair Tie Designed for Women with Shoulder Mobility Limitations",
+        "datePublished": "2026-05-01",
+        "author": { "@type": "Organization", "name": "H&H Wellness" },
+        "keywords": "adaptive hair tie, frozen shoulder, shoulder mobility, HairHelper"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

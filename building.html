@@ -3,11 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Now Building — H&H Wellness</title>
+  <title>HairHelper — Adaptive Hair Tie for Frozen Shoulder & Shoulder Mobility | H&H Wellness</title>
+  <meta name="description" content="HairHelper is the world's first adaptive hair tie for women with frozen shoulder, stroke recovery, and shoulder injuries. No overhead movement required. Launching June 2026." />
+  <meta name="keywords" content="HairHelper, adaptive hair tie, hair tie for frozen shoulder, hair tie limited mobility, frozen shoulder daily living, adaptive hair accessories, women mobility aid, shoulder injury hair styling, stroke recovery hair, scrunchie headband hybrid, H&H Wellness" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://hhwellness.com/building.html" />
+  <meta property="og:title" content="HairHelper — Adaptive Hair Tie for Women with Shoulder Mobility Limitations" />
+  <meta property="og:description" content="The world's first hair tie designed for women with frozen shoulder, stroke recovery, and shoulder injuries. No overhead motion required. Patent pending." />
+  <meta property="og:type" content="product" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .how-it-works {
+      position: relative; z-index: 2;
+      padding: 4rem 6vw; max-width: 960px; margin: 0 auto;
+    }
+    .section-eyebrow {
+      font-family: 'Syncopate', sans-serif;
+      font-size: clamp(.75rem,1.2vw,1rem); letter-spacing:.2em;
+      text-transform:uppercase; color:rgba(255,255,255,.4); margin:0 0 .4rem;
+    }
+    .section-title {
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:300;
+      margin:0 0 2.5rem; color:#fff;
+    }
+    .section-title em { font-style:italic; color:#d688c0; }
+
+    .steps-grid {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; margin-bottom:2rem;
+    }
+    @media(max-width:700px){ .steps-grid{grid-template-columns:repeat(2,1fr);} }
+
+    .step-card {
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+      border-radius:2px; padding:1.5rem 1.2rem 1.2rem; text-align:center;
+      transition:border-color .3s;
+    }
+    .step-card:hover{ border-color:rgba(214,136,192,.3); }
+    .step-number {
+      font-family:'Syncopate',sans-serif; font-size:.6rem;
+      letter-spacing:.2em; color:#d688c0; margin-bottom:1rem; text-transform:uppercase;
+    }
+    .step-svg { margin:0 auto 1rem; display:block; }
+    .step-title { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:#fff; font-weight:400; margin:0 0 .4rem; }
+    .step-desc { font-size:.78rem; color:rgba(255,255,255,.45); line-height:1.6; margin:0; }
+
+    .release-note {
+      background:rgba(255,255,255,.04); border:1px solid rgba(214,136,192,.2);
+      border-radius:2px; padding:1.4rem 1.8rem;
+      display:flex; align-items:center; gap:1.2rem;
+    }
+    .release-icon { font-size:1.4rem; flex-shrink:0; }
+    .release-note p { font-size:.88rem; color:rgba(255,255,255,.5); line-height:1.7; margin:0; }
+    .release-note strong { color:rgba(255,255,255,.85); }
+
+    .who-section { position:relative; z-index:2; padding:0 6vw 4rem; max-width:960px; margin:0 auto; }
+    .who-title em { font-style:italic; color:#c9705e; }
+    .who-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    @media(max-width:640px){ .who-grid{grid-template-columns:1fr;} }
+    .who-card {
+      background:rgba(201,112,94,.06); border:1px solid rgba(201,112,94,.15);
+      border-radius:2px; padding:1.4rem 1.2rem;
+    }
+    .who-card-icon { font-size:1.4rem; margin-bottom:.8rem; }
+    .who-card h4 { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:400; color:#e8a598; margin:0 0 .5rem; }
+    .who-card p { font-size:.82rem; color:rgba(255,255,255,.45); line-height:1.65; margin:0; }
+
+    .faq-section { position:relative; z-index:2; padding:0 6vw 5rem; max-width:960px; margin:0 auto; }
+    .faq-title em { font-style:italic; color:#d688c0; }
+    .faq-list { display:flex; flex-direction:column; gap:.8rem; }
+    .faq-item {
+      background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07);
+      border-radius:2px; overflow:hidden;
+    }
+    .faq-q {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1.1rem 1.4rem; cursor:pointer;
+      font-family:'Cormorant Garamond',serif; font-size:1.05rem;
+      color:rgba(255,255,255,.85); user-select:none; transition:background .2s;
+    }
+    .faq-q:hover{ background:rgba(255,255,255,.04); }
+    .faq-q::after{ content:'+'; color:#d688c0; font-size:1.2rem; flex-shrink:0; transition:transform .3s; margin-left:1rem; }
+    .faq-item.open .faq-q::after{ transform:rotate(45deg); }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height .4s ease; font-size:.88rem; color:rgba(255,255,255,.5); line-height:1.75; }
+    .faq-item.open .faq-a{ max-height:300px; }
+    .faq-a-inner{ padding:0 1.4rem 1.2rem; }
+
+    footer.site-footer {
+      text-align:center; padding:2rem 6vw;
+      border-top:1px solid rgba(255,255,255,.07);
+      color:rgba(255,255,255,.3); font-size:.75rem;
+      letter-spacing:.1em; position:relative; z-index:2;
+    }
+  </style>
 </head>
 <body class="building-page">
 
@@ -19,20 +110,17 @@
       <li><a href="building.html" class="active">Now Building</a></li>
       <li><a href="mission.html">Mission</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
-    <button class="nav-hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </nav>
-  <!-- Mobile nav drawer -->
   <div class="nav-drawer">
     <ul class="nav-drawer-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="building.html" class="active">Now Building</a></li>
       <li><a href="mission.html">Mission</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
   </div>
 
@@ -42,95 +130,74 @@
       <div class="orb orb-2" style="bottom:5%;left:-8%;"></div>
       <div class="orb orb-3" style="top:50%;left:40%;"></div>
       <svg class="grid-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-        <defs>
-          <pattern id="grid3" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(94,42,138,0.055)" stroke-width="1"/>
-          </pattern>
-        </defs>
+        <defs><pattern id="grid3" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(94,42,138,0.055)" stroke-width="1"/>
+        </pattern></defs>
         <rect width="100%" height="100%" fill="url(#grid3)" />
       </svg>
     </div>
 
-    <!-- Header -->
     <div class="building-header">
       <div class="eyebrow">H&H Wellness · Patent Pending</div>
-      <h1 class="page-title">
-        Now<br/><em>Building</em>
-      </h1>
+      <h1 class="page-title">Now<br/><em>Building</em></h1>
       <p>Two devices designed to address the gaps where women's healthcare has long been underserved: one for everyday independence, one for critical care.</p>
     </div>
 
-    <!-- Products grid -->
     <div class="products-grid">
 
-      <!-- Product 1: HairHelper -->
-      <div class="product-card card-rose">
+      <!-- HairHelper product card — SEO enriched -->
+      <article class="product-card card-rose" itemscope itemtype="https://schema.org/Product">
         <div class="patent-badge rose">Patent Pending</div>
-
-        <div class="product-icon">
+        <div class="product-icon" aria-hidden="true">
           <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
-            <!-- Stylized hair tie / mobility aid icon -->
             <circle cx="32" cy="20" r="13" fill="none" stroke="#c9705e" stroke-width="2"/>
             <circle cx="32" cy="20" r="7" fill="none" stroke="#e8a598" stroke-width="1.5" stroke-dasharray="3,3"/>
-            <!-- arm reaching up -->
             <path d="M 20 44 Q 24 34 32 33" fill="none" stroke="#c9705e" stroke-width="2" stroke-linecap="round"/>
-            <!-- assistive arc -->
             <path d="M 38 28 Q 46 22 44 36 Q 42 44 36 46" fill="none" stroke="#e8a598" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3,3"/>
             <circle cx="32" cy="20" r="2.5" fill="#c9705e" opacity="0.7"/>
           </svg>
         </div>
-
-        <h2 class="product-name">HairHelper</h2>
-        <div class="product-subtitle">by H&H Wellness</div>
+        <h2 class="product-name" itemprop="name">HairHelper</h2>
+        <div class="product-subtitle" itemprop="brand">by H&amp;H Wellness</div>
         <div class="product-divider"></div>
-
-        <p class="product-desc">
-          A thoughtfully engineered hair tie designed for individuals with shoulder mobility limitations from frozen shoulder to quadriplegia. HairHelper restores the simple, dignified act of styling one's own hair without assistance.
+        <p class="product-desc" itemprop="description">
+          The world's first adaptive hair tie engineered for women with <strong>frozen shoulder (adhesive capsulitis)</strong>, stroke-related shoulder weakness, spinal cord injuries, and those <strong>recovering from shoulder surgery</strong>. HairHelper restores the simple, dignified act of styling your own hair — without assistance and without overhead arm movement.
         </p>
-
         <p class="product-desc">
-          Engineered to require minimal arm elevation and hand dexterity, HairHelper works with the body, not against it, preserving independence at every stage of mobility.
+          HairHelper works as a <strong>hybrid scrunchie-headband</strong>: slip it over your head like a headband, glide it to the crown, press the clasp and pull the cords to tighten. To release, press the clasp and gently pull to loosen. Designed to work with your body at every stage of mobility.
         </p>
-
-        <div class="product-tags">
+        <div class="product-tags" aria-label="Product categories">
           <span class="tag tag-rose">Mobility Aid</span>
           <span class="tag tag-rose">Frozen Shoulder</span>
           <span class="tag tag-rose">Spinal Cord Injury</span>
           <span class="tag tag-rose">Adaptive Design</span>
-          <span class="tag tag-rose">Daily Living</span>
+          <span class="tag tag-rose">Daily Living Aid</span>
+          <span class="tag tag-rose">Stroke Recovery</span>
         </div>
-      </div>
+        <div style="margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid rgba(201,112,94,.2);">
+          <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(201,112,94,.6);margin-bottom:.4rem;">Launching</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#e8a598;">June 2026 · Waitlist Coming Soon</div>
+        </div>
+      </article>
 
-      <!-- Product 2: Caesarean Delivery Glove -->
-      <div class="product-card card-sage">
+      <!-- Caesarean Delivery Glove -->
+      <article class="product-card card-sage" itemscope itemtype="https://schema.org/Product">
         <div class="patent-badge sage">Patent Pending</div>
-
-        <div class="product-icon">
+        <div class="product-icon" aria-hidden="true">
           <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
-            <!-- Medical glove / hand silhouette -->
             <path d="M 22 52 L 20 30 Q 20 26 24 26 L 24 18 Q 24 14 28 14 L 28 12 Q 28 8 32 8 Q 36 8 36 12 L 36 14 Q 40 14 40 18 L 40 26 Q 44 26 44 30 L 42 52 Q 42 56 32 56 Q 22 56 22 52 Z" fill="none" stroke="#9b6ec8" stroke-width="2" stroke-linejoin="round"/>
-            <!-- finger lines -->
             <line x1="28" y1="14" x2="28" y2="26" stroke="#9b6ec8" stroke-width="1" opacity="0.5"/>
             <line x1="32" y1="12" x2="32" y2="26" stroke="#9b6ec8" stroke-width="1" opacity="0.5"/>
             <line x1="36" y1="14" x2="36" y2="26" stroke="#9b6ec8" stroke-width="1" opacity="0.5"/>
-            <!-- cross symbol -->
             <line x1="29" y1="39" x2="35" y2="39" stroke="#9b6ec8" stroke-width="2" stroke-linecap="round"/>
             <line x1="32" y1="36" x2="32" y2="42" stroke="#9b6ec8" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
-
-        <h2 class="product-name">Caesarean Delivery Glove</h2>
-        <div class="product-subtitle">by H&H Wellness</div>
+        <h2 class="product-name" itemprop="name">Caesarean Delivery Glove</h2>
+        <div class="product-subtitle" itemprop="brand">by H&amp;H Wellness</div>
         <div class="product-divider"></div>
-
-        <p class="product-desc">
-          A precision surgical tool for use during C-sections involving <em>impacted fetal head complications</em> specifically in cases with dilation greater than 7 cm.
-        </p>
-
-        <p class="product-desc">
-          Designed to help clinicians improve efficiency and outcomes during one of obstetrics' most challenging intraoperative scenarios, reducing risk to both mother and child in time-critical situations.
-        </p>
-
+        <p class="product-desc" itemprop="description">A precision surgical tool for use during C-sections involving <em>impacted fetal head complications</em> — specifically in cases with dilation greater than 7 cm.</p>
+        <p class="product-desc">Designed to help clinicians improve efficiency and outcomes during one of obstetrics' most challenging intraoperative scenarios, reducing risk to both mother and child in time-critical situations.</p>
         <div class="product-tags">
           <span class="tag tag-sage">Surgical Device</span>
           <span class="tag tag-sage">Obstetrics</span>
@@ -138,14 +205,193 @@
           <span class="tag tag-sage">Impacted Fetal Head</span>
           <span class="tag tag-sage">Clinical Outcomes</span>
         </div>
-      </div>
+      </article>
 
     </div>
-
     <div class="corner corner-tl"></div>
     <div class="corner corner-br"></div>
   </section>
 
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" aria-labelledby="how-heading">
+    <p class="section-eyebrow">Step by Step</p>
+    <h2 class="section-title" id="how-heading">How <em>HairHelper</em> Works</h2>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">Step 01</div>
+        <svg class="step-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="88" height="88">
+          <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d688c0"/><stop offset="100%" stop-color="#5e2a8a"/></linearGradient></defs>
+          <ellipse cx="50" cy="54" rx="22" ry="26" fill="none" stroke="rgba(214,136,192,0.4)" stroke-width="1.5"/>
+          <rect x="44" y="76" width="12" height="10" rx="2" fill="none" stroke="rgba(214,136,192,0.25)" stroke-width="1.2"/>
+          <ellipse cx="50" cy="30" rx="36" ry="13" fill="none" stroke="url(#g1)" stroke-width="2.5"/>
+          <path d="M50 16 L50 24" stroke="rgba(214,136,192,0.6)" stroke-width="1.5" stroke-dasharray="2,2" stroke-linecap="round"/>
+          <path d="M46 22 L50 26 L54 22" fill="none" stroke="rgba(214,136,192,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="50" y="96" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7" fill="rgba(255,255,255,0.3)" letter-spacing="0.08em">SLIP OVER HEAD</text>
+        </svg>
+        <p class="step-title">Slip On</p>
+        <p class="step-desc">Place HairHelper over your head like a headband — no overhead reaching required.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">Step 02</div>
+        <svg class="step-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="88" height="88">
+          <defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d688c0"/><stop offset="100%" stop-color="#5e2a8a"/></linearGradient></defs>
+          <ellipse cx="50" cy="56" rx="22" ry="26" fill="none" stroke="rgba(214,136,192,0.4)" stroke-width="1.5"/>
+          <rect x="44" y="78" width="12" height="10" rx="2" fill="none" stroke="rgba(214,136,192,0.25)" stroke-width="1.2"/>
+          <ellipse cx="50" cy="34" rx="27" ry="9" fill="none" stroke="url(#g2)" stroke-width="2.5"/>
+          <path d="M28 46 Q18 36 25 28" fill="none" stroke="rgba(214,136,192,0.5)" stroke-width="1.2" stroke-dasharray="2,2" stroke-linecap="round"/>
+          <path d="M72 46 Q82 36 75 28" fill="none" stroke="rgba(214,136,192,0.5)" stroke-width="1.2" stroke-dasharray="2,2" stroke-linecap="round"/>
+          <text x="50" y="96" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7" fill="rgba(255,255,255,0.3)" letter-spacing="0.08em">SLIDE TO CROWN</text>
+        </svg>
+        <p class="step-title">Slide to Crown</p>
+        <p class="step-desc">Glide it up to the crown of your head, gathering hair as it moves.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">Step 03</div>
+        <svg class="step-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="88" height="88">
+          <defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d688c0"/><stop offset="100%" stop-color="#5e2a8a"/></linearGradient></defs>
+          <ellipse cx="50" cy="57" rx="22" ry="26" fill="none" stroke="rgba(214,136,192,0.4)" stroke-width="1.5"/>
+          <rect x="44" y="79" width="12" height="10" rx="2" fill="none" stroke="rgba(214,136,192,0.25)" stroke-width="1.2"/>
+          <rect x="41" y="26" width="18" height="11" rx="3" fill="rgba(94,42,138,0.5)" stroke="url(#g3)" stroke-width="1.5"/>
+          <line x1="41" y1="31" x2="20" y2="31" stroke="#d688c0" stroke-width="2" stroke-linecap="round"/>
+          <line x1="59" y1="31" x2="80" y2="31" stroke="#d688c0" stroke-width="2" stroke-linecap="round"/>
+          <path d="M24 27 L19 31 L24 35" fill="none" stroke="#d688c0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M76 27 L81 31 L76 35" fill="none" stroke="#d688c0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M50 25 L50 20" stroke="rgba(214,136,192,0.7)" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M47 23 L50 19 L53 23" fill="none" stroke="rgba(214,136,192,0.9)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180,50,21)"/>
+          <text x="50" y="96" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7" fill="rgba(255,255,255,0.3)" letter-spacing="0.08em">PRESS + PULL</text>
+        </svg>
+        <p class="step-title">Press &amp; Pull</p>
+        <p class="step-desc">Press the clasp down and pull both cords simultaneously to tighten and secure.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">Done ✓</div>
+        <svg class="step-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="88" height="88">
+          <defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d688c0"/><stop offset="100%" stop-color="#5e2a8a"/></linearGradient></defs>
+          <ellipse cx="50" cy="54" rx="22" ry="26" fill="none" stroke="rgba(214,136,192,0.4)" stroke-width="1.5"/>
+          <rect x="44" y="76" width="12" height="10" rx="2" fill="none" stroke="rgba(214,136,192,0.25)" stroke-width="1.2"/>
+          <ellipse cx="50" cy="30" rx="12" ry="7" fill="rgba(94,42,138,0.4)" stroke="url(#g4)" stroke-width="1.8"/>
+          <path d="M44 37 Q38 50 36 64" fill="none" stroke="rgba(214,136,192,0.5)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M50 37 Q50 52 50 68" fill="none" stroke="rgba(214,136,192,0.4)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M56 37 Q62 50 64 64" fill="none" stroke="rgba(214,136,192,0.35)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="79" cy="22" r="11" fill="rgba(94,42,138,0.6)" stroke="url(#g4)" stroke-width="1.2"/>
+          <path d="M73 22 L78 27 L85 15" fill="none" stroke="#d688c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="50" y="96" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7" fill="rgba(255,255,255,0.3)" letter-spacing="0.08em">INDEPENDENTLY STYLED</text>
+        </svg>
+        <p class="step-title">Styled ✓</p>
+        <p class="step-desc">Hair secured. To release: press the clasp and pull gently to loosen. All done independently.</p>
+      </div>
+    </div>
+
+    <div class="release-note">
+      <span class="release-icon">🔓</span>
+      <p><strong>To release:</strong> Press down on the clasp mechanism and pull gently — the cords loosen and HairHelper slides off. The full process requires no overhead arm movement and minimal hand dexterity.</p>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="who-section" aria-labelledby="who-heading">
+    <p class="section-eyebrow">Designed For</p>
+    <h2 class="section-title who-title" id="who-heading">Who <em>HairHelper</em> Helps</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-card-icon">🧊</div>
+        <h4>Frozen Shoulder</h4>
+        <p>Adhesive capsulitis severely limits overhead range of motion. HairHelper eliminates the need to raise arms above shoulder height.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon">🧠</div>
+        <h4>Stroke Recovery</h4>
+        <p>For women with post-stroke hemiplegia or reduced upper limb function, HairHelper works as a true ADL aid — one-hand compatible.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon">🩹</div>
+        <h4>Shoulder Surgery Recovery</h4>
+        <p>Rotator cuff repair, shoulder replacement, and other procedures leave months of restricted motion. HairHelper works throughout recovery.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon">♿</div>
+        <h4>Spinal Cord Injury</h4>
+        <p>Women with cervical or thoracic SCI affecting upper extremity function can use HairHelper with minimal arm elevation and dexterity.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon">💪</div>
+        <h4>Shoulder Impingement</h4>
+        <p>Chronic pain shouldn't mean dependence on others for something as personal as styling your own hair.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon">✨</div>
+        <h4>Anyone Wanting Ease</h4>
+        <p>HairHelper's one-step mechanism is faster and gentler than traditional ties — no crease, no breakage, no struggle.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <p class="section-eyebrow">Questions</p>
+    <h2 class="section-title faq-title" id="faq-heading">Frequently <em>Asked</em></h2>
+    <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <div class="faq-q" itemprop="name" role="button" tabindex="0">What makes HairHelper different from a regular hair tie?</div>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">Unlike traditional hair ties or scrunchies, HairHelper doesn't require any overhead arm movement or repeated looping. It slides on like a headband and tightens with a single press-and-pull motion at the crown — specifically engineered for women who cannot raise their arms above their head.</div></div>
+      </div>
+
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <div class="faq-q" itemprop="name" role="button" tabindex="0">Can HairHelper be used with one hand?</div>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">HairHelper is designed to be as one-hand-friendly as possible. The slip-on headband application requires minimal bilateral coordination, and the clasp-and-cord tightening mechanism is operable with limited dexterity. We continue refining the design with occupational therapist input ahead of launch.</div></div>
+      </div>
+
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <div class="faq-q" itemprop="name" role="button" tabindex="0">When does HairHelper launch?</div>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">HairHelper is launching in June 2026. A waitlist is opening very soon — follow us or check back to be the first to know.</div></div>
+      </div>
+
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <div class="faq-q" itemprop="name" role="button" tabindex="0">Is HairHelper covered by HSA or FSA?</div>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">We are actively exploring HSA/FSA eligibility for HairHelper as a qualified adaptive daily living aid. More details will be shared at launch.</div></div>
+      </div>
+
+      <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+        <div class="faq-q" itemprop="name" role="button" tabindex="0">What hair types does HairHelper work with?</div>
+        <div class="faq-a" itemscope itemtype="https://schema.org/Answer"><div class="faq-a-inner" itemprop="text">HairHelper is designed for medium to long hair and works across a wide range of hair types and textures. We're finalizing sizing options — our goal is to serve as many women as possible, and sizing details will be announced closer to launch.</div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    &copy; 2026 H&amp;H Wellness. All rights reserved.
+  </footer>
+
   <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+      q.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
+      });
+    });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "HairHelper",
+    "description": "The world's first adaptive hair tie for women with frozen shoulder, stroke recovery, and shoulder injuries. A hybrid scrunchie-headband requiring no overhead arm movement. Patent pending.",
+    "brand": { "@type": "Brand", "name": "H&H Wellness" },
+    "category": "Adaptive Daily Living Aid",
+    "offers": { "@type": "Offer", "availability": "https://schema.org/PreOrder", "availabilityStarts": "2026-06-01" }
+  }
+  </script>
 </body>
 </html>
