@@ -631,10 +631,94 @@ html, body {
 }
 
 /* =============================================
-   NOW BUILDING PAGE
+   NOW BUILDING PAGE — dark theme
    ============================================= */
 .building-page {
-  background: var(--bg);
+  background: #0f0a18;
+  color: #ffffff;
+}
+
+/* Dark nav override */
+.building-page .nav {
+  background: rgba(15,10,24,0.92);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+.building-page .nav-links a { color: rgba(255,255,255,0.5); }
+.building-page .nav-links a:hover,
+.building-page .nav-links a.active { color: #ffffff; }
+.building-page .nav-logo { color: #d688c0; }
+.building-page .amp { color: rgba(214,136,192,0.7); }
+.building-page .nav-tagline { color: rgba(255,255,255,0.3); }
+.building-page .nav-hamburger span { background: #d688c0; }
+.building-page .nav-drawer { background: rgba(15,10,24,0.97); }
+.building-page .nav-drawer-links a { color: rgba(255,255,255,0.6); }
+.building-page .nav-drawer-links a:hover,
+.building-page .nav-drawer-links a.active { color: #d688c0; }
+
+/* Dark product cards */
+.building-page .product-card {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.08);
+  box-shadow: none;
+}
+.building-page .product-card:hover {
+  box-shadow: 0 8px 40px rgba(214,136,192,0.1);
+  border-color: rgba(214,136,192,0.25);
+}
+.building-page .product-name { color: #ffffff; }
+.building-page .product-desc { color: rgba(255,255,255,0.6); }
+.building-page .product-subtitle { color: #d688c0; }
+.building-page .product-card.card-sage .product-subtitle { color: #c4a0e8; }
+.building-page .product-divider { background: rgba(214,136,192,0.3); }
+.building-page .product-card.card-sage .product-divider { background: rgba(155,110,200,0.3); }
+
+/* Dark badges & tags */
+.building-page .patent-badge.rose {
+  background: rgba(214,136,192,0.1);
+  color: #e8a598;
+  border-color: rgba(201,112,94,0.3);
+}
+.building-page .patent-badge.sage {
+  background: rgba(155,110,200,0.1);
+  color: #c4a0e8;
+  border-color: rgba(155,110,200,0.3);
+}
+.building-page .tag-rose {
+  background: rgba(201,112,94,0.12);
+  color: #e8a598;
+}
+.building-page .tag-sage {
+  background: rgba(155,110,200,0.12);
+  color: #c4a0e8;
+}
+
+/* Dark header text */
+.building-page .building-header .page-title { color: #ffffff; }
+.building-page .building-header .page-title em { color: #d688c0; }
+.building-page .building-header p { color: rgba(255,255,255,0.55); }
+.building-page .eyebrow { color: rgba(214,136,192,0.75); }
+
+/* Dark orbs */
+.building-page .orb-1 {
+  background: radial-gradient(circle, rgba(94,42,138,0.5) 0%, transparent 70%);
+}
+.building-page .orb-2 {
+  background: radial-gradient(circle, rgba(214,136,192,0.2) 0%, transparent 70%);
+}
+.building-page .orb-3 {
+  background: radial-gradient(circle, rgba(94,42,138,0.3) 0%, transparent 70%);
+}
+
+/* Corners on dark pages */
+.building-page .corner-tl,
+.building-page .corner-br { border-color: rgba(214,136,192,0.3); }
+
+/* Footer */
+.building-page footer,
+.building-page .site-footer {
+  background: #0f0a18;
+  border-top-color: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.25);
 }
 
 .building-hero {
@@ -1208,3 +1292,39 @@ html, body {
   color: var(--blush);
   opacity: 0.8;
 }
+
+/* =============================================
+   BLOG PAGE — dark theme (mirrors building-page)
+   ============================================= */
+.blog-page {
+  background: #0f0a18;
+  color: #ffffff;
+}
+
+/* Reuse all building-page dark nav/orb/footer overrides */
+.blog-page .nav {
+  background: rgba(15,10,24,0.92);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+.blog-page .nav-links a { color: rgba(255,255,255,0.5); }
+.blog-page .nav-links a:hover,
+.blog-page .nav-links a.active { color: #ffffff; }
+.blog-page .nav-logo { color: #d688c0; }
+.blog-page .amp { color: rgba(214,136,192,0.7); }
+.blog-page .nav-tagline { color: rgba(255,255,255,0.3); }
+.blog-page .nav-hamburger span { background: #d688c0; }
+.blog-page .nav-drawer { background: rgba(15,10,24,0.97); }
+.blog-page .nav-drawer-links a { color: rgba(255,255,255,0.6); }
+.blog-page .nav-drawer-links a:hover,
+.blog-page .nav-drawer-links a.active { color: #d688c0; }
+
+.blog-page .orb-1 {
+  background: radial-gradient(circle, rgba(94,42,138,0.5) 0%, transparent 70%);
+}
+.blog-page .orb-2 {
+  background: radial-gradient(circle, rgba(214,136,192,0.2) 0%, transparent 70%);
+}
+.blog-page .eyebrow { color: rgba(214,136,192,0.75); }
+.blog-page .corner-tl,
+.blog-page .corner-br { border-color: rgba(214,136,192,0.3); }
+.blog-page footer { color: rgba(255,255,255,0.25); border-top-color: rgba(255,255,255,0.07); }
