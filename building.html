@@ -15,92 +15,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .how-it-works {
-      position: relative; z-index: 2;
-      padding: 4rem 6vw; max-width: 960px; margin: 0 auto;
-    }
-    .section-eyebrow {
-      font-family: 'Syncopate', sans-serif;
-      font-size: clamp(.75rem,1.2vw,1rem); letter-spacing:.2em;
-      text-transform:uppercase; color:rgba(255,255,255,.4); margin:0 0 .4rem;
-    }
-    .section-title {
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:300;
-      margin:0 0 2.5rem; color:#fff;
-    }
-    .section-title em { font-style:italic; color:#d688c0; }
-
-    .steps-grid {
-      display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; margin-bottom:2rem;
-    }
-    @media(max-width:700px){ .steps-grid{grid-template-columns:repeat(2,1fr);} }
-
-    .step-card {
-      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
-      border-radius:2px; padding:1.5rem 1.2rem 1.2rem; text-align:center;
-      transition:border-color .3s;
-    }
-    .step-card:hover{ border-color:rgba(214,136,192,.3); }
-    .step-number {
-      font-family:'Syncopate',sans-serif; font-size:.6rem;
-      letter-spacing:.2em; color:#d688c0; margin-bottom:1rem; text-transform:uppercase;
-    }
-    .step-svg { margin:0 auto 1rem; display:block; }
-    .step-title { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:#fff; font-weight:400; margin:0 0 .4rem; }
-    .step-desc { font-size:.78rem; color:rgba(255,255,255,.45); line-height:1.6; margin:0; }
-
-    .release-note {
-      background:rgba(255,255,255,.04); border:1px solid rgba(214,136,192,.2);
-      border-radius:2px; padding:1.4rem 1.8rem;
-      display:flex; align-items:center; gap:1.2rem;
-    }
-    .release-icon { font-size:1.4rem; flex-shrink:0; }
-    .release-note p { font-size:.88rem; color:rgba(255,255,255,.5); line-height:1.7; margin:0; }
-    .release-note strong { color:rgba(255,255,255,.85); }
-
-    .who-section { position:relative; z-index:2; padding:0 6vw 4rem; max-width:960px; margin:0 auto; }
-    .who-title em { font-style:italic; color:#c9705e; }
-    .who-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-    @media(max-width:640px){ .who-grid{grid-template-columns:1fr;} }
-    .who-card {
-      background:rgba(201,112,94,.06); border:1px solid rgba(201,112,94,.15);
-      border-radius:2px; padding:1.4rem 1.2rem;
-    }
-    .who-card-icon { font-size:1.4rem; margin-bottom:.8rem; }
-    .who-card h4 { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:400; color:#e8a598; margin:0 0 .5rem; }
-    .who-card p { font-size:.82rem; color:rgba(255,255,255,.45); line-height:1.65; margin:0; }
-
-    .faq-section { position:relative; z-index:2; padding:0 6vw 5rem; max-width:960px; margin:0 auto; }
-    .faq-title em { font-style:italic; color:#d688c0; }
-    .faq-list { display:flex; flex-direction:column; gap:.8rem; }
-    .faq-item {
-      background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07);
-      border-radius:2px; overflow:hidden;
-    }
-    .faq-q {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:1.1rem 1.4rem; cursor:pointer;
-      font-family:'Cormorant Garamond',serif; font-size:1.05rem;
-      color:rgba(255,255,255,.85); user-select:none; transition:background .2s;
-    }
-    .faq-q:hover{ background:rgba(255,255,255,.04); }
-    .faq-q::after{ content:'+'; color:#d688c0; font-size:1.2rem; flex-shrink:0; transition:transform .3s; margin-left:1rem; }
-    .faq-item.open .faq-q::after{ transform:rotate(45deg); }
-    .faq-a { max-height:0; overflow:hidden; transition:max-height .4s ease; font-size:.88rem; color:rgba(255,255,255,.5); line-height:1.75; }
-    .faq-item.open .faq-a{ max-height:300px; }
-    .faq-a-inner{ padding:0 1.4rem 1.2rem; }
-
-    footer.site-footer {
-      text-align:center; padding:2rem 6vw;
-      border-top:1px solid rgba(255,255,255,.07);
-      color:rgba(255,255,255,.3); font-size:.75rem;
-      letter-spacing:.1em; position:relative; z-index:2;
-    }
-  </style>
 </head>
-<body class="building-page">
+<body>
 
   <!-- NAV -->
   <nav class="nav">
@@ -175,8 +91,8 @@
           <span class="tag tag-rose">Stroke Recovery</span>
         </div>
         <div style="margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid rgba(201,112,94,.2);">
-          <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(201,112,94,.6);margin-bottom:.4rem;">Launching</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#e8a598;">June 2026 · Waitlist Coming Soon</div>
+          <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rose-light);opacity:.7;margin-bottom:.4rem;">Launching</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--rose);">June 2026 · Waitlist Coming Soon</div>
         </div>
       </article>
 
