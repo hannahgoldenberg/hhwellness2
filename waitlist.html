@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the Waitlist — HairHelper by H&H Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Waitlist page ── */
+    .waitlist-hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 8rem 2rem 6rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .waitlist-layout {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      max-width: 1060px;
+      width: 100%;
+      align-items: start;
+    }
+
+    /* Left column — copy */
+    .waitlist-copy {
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    .waitlist-copy .page-title {
+      font-family: var(--font-label);
+      font-size: clamp(1.6rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin: 0.8rem 0 0.4rem;
+      line-height: 1.1;
+    }
+
+    .waitlist-copy .page-title em {
+      display: block;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.4rem, 3.5vw, 2.6rem);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--pink-deep);
+      text-transform: none;
+    }
+
+    .waitlist-copy .lead {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 1.6rem 0 2.4rem;
+      max-width: 440px;
+    }
+
+    .launch-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-pink);
+      border-radius: 50px;
+      padding: 0.55rem 1.2rem 0.55rem 0.6rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.6rem;
+    }
+    .launch-pill-badge {
+      background: linear-gradient(135deg, var(--pink-deep), var(--pink-soft));
+      color: #fff;
+      font-family: var(--font-label);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .launch-pill-text {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+    }
+    .launch-pill-text strong {
+      color: var(--pink-deep);
+    }
+
+    /* Feature list */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .feature-list li::before {
+      content: '◈';
+      color: var(--pink-deep);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 0.15em;
+      opacity: 0.8;
+    }
+
+    /* Countdown */
+    .countdown-row {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 2.4rem;
+    }
+    .countdown-unit {
+      text-align: center;
+    }
+    .countdown-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--pink-deep);
+      line-height: 1;
+      display: block;
+    }
+    .countdown-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 0.25rem;
+    }
+    .countdown-sep {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--text-faint);
+      align-self: flex-start;
+      margin-top: 0.1rem;
+      line-height: 1;
+    }
+
+    /* Right column — form */
+    .waitlist-form-wrap {
+      animation: fadeUp 1s 0.2s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    .form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-card-header {
+      padding: 2rem 2rem 0;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.4rem;
+    }
+    .form-card-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin: 0 0 0.3rem;
+    }
+    .form-card-header p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* Google Form iframe container */
+    .form-iframe-container {
+      padding: 0;
+      background: var(--bg);
+    }
+    .form-iframe-container iframe {
+      display: block;
+      width: 100%;
+      border: none;
+      /* height set inline */
+    }
+
+    /* Social proof strip */
+    .social-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.2rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-card-alt);
+    }
+    .social-strip-dots {
+      display: flex;
+      gap: 0.3rem;
+    }
+    .social-strip-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1.5px solid var(--bg-card);
+      background: linear-gradient(135deg, var(--pink-pale), var(--purple-pale));
+    }
+    .social-strip-dot:nth-child(2) { background: linear-gradient(135deg, var(--purple-pale), var(--pink-pale)); }
+    .social-strip-dot:nth-child(3) { background: linear-gradient(135deg, var(--pink-pale), var(--pink-deep) 200%); }
+    .social-strip-text {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+    .social-strip-text strong {
+      color: var(--pink-deep);
+    }
+
+    /* Section divider below layout */
+    .waitlist-divider {
+      position: relative;
+      z-index: 2;
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--pink), transparent);
+      margin: 4rem 0 3rem;
+    }
+
+    /* About the product strip */
+    .product-strip {
+      position: relative;
+      z-index: 2;
+      max-width: 1060px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      animation: fadeUp 1s 0.35s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .product-strip-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .product-strip-icon {
+      font-size: 1.4rem;
+      color: var(--pink-deep);
+      margin-bottom: 0.7rem;
+    }
+    .product-strip-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin: 0 0 0.4rem;
+    }
+    .product-strip-card p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    @media (max-width: 860px) {
+      .waitlist-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .waitlist-copy .lead { max-width: 100%; }
+      .product-strip { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .waitlist-hero { padding: 6.5rem 1.2rem 4rem; }
+      .countdown-row { gap: 0.8rem; }
+      .countdown-num { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-brand">
+      <div class="nav-logo">H<span class="amp">&</span>H</div>
+      <div class="nav-tagline">Empowering Health Technology</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="building.html">Now Building</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-drawer">
+    <ul class="nav-drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="building.html">Now Building</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </div>
+
+  <!-- WAITLIST HERO -->
+  <section class="waitlist-hero">
+    <div class="bg-canvas">
+      <div class="orb orb-1" style="top:-12%;left:60%"></div>
+      <div class="orb orb-2" style="bottom:5%;left:-8%"></div>
+      <div class="orb orb-3" style="top:50%;left:40%"></div>
+      <svg class="grid-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="grid-wl" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(94,42,138,0.06)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid-wl)" />
+      </svg>
+    </div>
+
+    <div class="waitlist-layout">
+
+      <!-- LEFT: Copy -->
+      <div class="waitlist-copy">
+        <div class="launch-pill">
+          <span class="launch-pill-badge">🚀 Launching</span>
+          <span class="launch-pill-text"><strong>June 30, 2026</strong></span>
+        </div>
+
+        <div class="eyebrow">Join the Waitlist</div>
+        <h1 class="page-title">
+          Hair<em>Helper</em>
+        </h1>
+
+        <p class="lead">
+          The adaptive hair tie designed for women with limited hand mobility. Independence shouldn't depend on who's nearby.
+        </p>
+
+        <!-- Countdown -->
+        <div class="countdown-row" id="countdown">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-days">20</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-mins">00</span>
+            <span class="countdown-label">Mins</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-secs">00</span>
+            <span class="countdown-label">Secs</span>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li>One-handed application — no assistance needed</li>
+          <li>Adaptive, flexible design for all hair types</li>
+          <li>Engineered for women with mobility disabilities</li>
+          <li>Sales open June 30, 2026 — be first to know</li>
+        </ul>
+
+        <a href="building.html" class="btn-ghost" style="font-size:0.72rem;">Learn more about HairHelper →</a>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="waitlist-form-wrap">
+        <div class="form-card">
+          <div class="form-card-header">
+            <h3>Get notified at launch</h3>
+            <p>No commitment — just first-to-know access when we go live June 30</p>
+          </div>
+
+          <div class="form-iframe-container">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfbrtY6VZUVFQC9cyEb4IOzE5KbMuFjPDORe5riisDyMUdrKQ/viewform?embedded=true"
+              width="100%"
+              height="608"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0">Loading…</iframe>
+          </div>
+
+          <div class="social-strip">
+            <div class="social-strip-dots">
+              <div class="social-strip-dot"></div>
+              <div class="social-strip-dot"></div>
+              <div class="social-strip-dot"></div>
+            </div>
+            <span class="social-strip-text">Join early supporters of <strong>H&amp;H Wellness</strong></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="waitlist-divider"></div>
+
+    <!-- Product highlights strip -->
+    <div class="product-strip">
+      <div class="product-strip-card">
+        <div class="product-strip-icon">♀</div>
+        <h4>Women-First Design</h4>
+        <p>Built by women, for women — every detail considers the lived experience of our users.</p>
+      </div>
+      <div class="product-strip-card">
+        <div class="product-strip-icon">◈</div>
+        <h4>Adaptive Engineering</h4>
+        <p>Flexible enough for daily wear, engineered for one-handed independence.</p>
+      </div>
+      <div class="product-strip-card">
+        <div class="product-strip-icon">✦</div>
+        <h4>Mission-Driven</h4>
+        <p>A portion of every sale funds product donations to under-resourced communities worldwide.</p>
+      </div>
+    </div>
+
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-br"></div>
+  </section>
+
+  <footer>
+    &copy; 2026 H&amp;H Wellness. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Countdown to June 30, 2026 midnight ET
+    function updateCountdown() {
+      const target = new Date('2026-06-30T00:00:00-04:00').getTime();
+      const now = Date.now();
+      const diff = Math.max(0, target - now);
+
+      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+      const pad = n => String(n).padStart(2, '0');
+      document.getElementById('cd-days').textContent  = pad(days);
+      document.getElementById('cd-hours').textContent = pad(hours);
+      document.getElementById('cd-mins').textContent  = pad(mins);
+      document.getElementById('cd-secs').textContent  = pad(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
