@@ -3,11 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join the Waitlist — HairHelper by H&H Wellness</title>
+
+  <title>Join the HairHelper Waitlist — Adaptive Hair Tie for Frozen Shoulder | H&H Wellness</title>
+  <meta name="description" content="Sign up for early access to HairHelper — the first adaptive hair tie for women with frozen shoulder, stroke recovery, and shoulder mobility limitations. Launching June 30, 2026. No commitment required." />
+  <meta name="keywords" content="HairHelper waitlist, adaptive hair tie pre-order, hair tie frozen shoulder, hair accessories limited mobility, HairHelper launch, H&H Wellness waitlist" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://hhwellness.live/waitlist.html" />
+
+  <meta property="og:title" content="Join the HairHelper Waitlist — Adaptive Hair Tie Launching June 30, 2026" />
+  <meta property="og:description" content="Be first to know when HairHelper launches. The adaptive hair tie designed for women with frozen shoulder, stroke recovery, and shoulder mobility limitations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hhwellness.live/waitlist.html" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "HairHelper",
+    "description": "The world's first adaptive hair tie for women with frozen shoulder, stroke recovery, and shoulder mobility limitations. A hybrid scrunchie-headband requiring no overhead arm movement. Patent pending.",
+    "brand": { "@type": "Brand", "name": "H&H Wellness" },
+    "category": "Adaptive Daily Living Aid",
+    "url": "https://hhwellness.live/waitlist.html",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/PreOrder",
+      "availabilityStarts": "2026-06-30",
+      "url": "https://hhwellness.live/waitlist.html"
+    }
+  }
+  </script>
+
   <style>
     /* ── Waitlist page ── */
     .waitlist-hero {
@@ -31,7 +61,6 @@
       align-items: start;
     }
 
-    /* Left column — copy */
     .waitlist-copy {
       animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) both;
     }
@@ -97,11 +126,8 @@
       letter-spacing: 0.1em;
       color: var(--text-secondary);
     }
-    .launch-pill-text strong {
-      color: var(--pink-deep);
-    }
+    .launch-pill-text strong { color: var(--pink-deep); }
 
-    /* Feature list */
     .feature-list {
       list-style: none;
       padding: 0;
@@ -129,15 +155,12 @@
       opacity: 0.8;
     }
 
-    /* Countdown */
     .countdown-row {
       display: flex;
       gap: 1.2rem;
       margin-bottom: 2.4rem;
     }
-    .countdown-unit {
-      text-align: center;
-    }
+    .countdown-unit { text-align: center; }
     .countdown-num {
       font-family: var(--font-display);
       font-size: 2.2rem;
@@ -164,7 +187,6 @@
       line-height: 1;
     }
 
-    /* Right column — form */
     .waitlist-form-wrap {
       animation: fadeUp 1s 0.2s cubic-bezier(0.16,1,0.3,1) both;
     }
@@ -178,9 +200,8 @@
     }
 
     .form-card-header {
-      padding: 2rem 2rem 0;
+      padding: 2rem 2rem 1.4rem;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 1.4rem;
     }
     .form-card-header h3 {
       font-family: var(--font-display);
@@ -195,7 +216,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* Google Form iframe container */
     .form-iframe-container {
       padding: 0;
       background: var(--bg);
@@ -204,10 +224,8 @@
       display: block;
       width: 100%;
       border: none;
-      /* height set inline */
     }
 
-    /* Social proof strip */
     .social-strip {
       display: flex;
       align-items: center;
@@ -217,13 +235,9 @@
       border-top: 1px solid var(--border);
       background: var(--bg-card-alt);
     }
-    .social-strip-dots {
-      display: flex;
-      gap: 0.3rem;
-    }
+    .social-strip-dots { display: flex; gap: 0.3rem; }
     .social-strip-dot {
-      width: 22px;
-      height: 22px;
+      width: 22px; height: 22px;
       border-radius: 50%;
       border: 1.5px solid var(--bg-card);
       background: linear-gradient(135deg, var(--pink-pale), var(--purple-pale));
@@ -235,11 +249,8 @@
       color: var(--text-muted);
       letter-spacing: 0.08em;
     }
-    .social-strip-text strong {
-      color: var(--pink-deep);
-    }
+    .social-strip-text strong { color: var(--pink-deep); }
 
-    /* Section divider below layout */
     .waitlist-divider {
       position: relative;
       z-index: 2;
@@ -249,7 +260,6 @@
       margin: 4rem 0 3rem;
     }
 
-    /* About the product strip */
     .product-strip {
       position: relative;
       z-index: 2;
@@ -288,14 +298,10 @@
     }
 
     @media (max-width: 860px) {
-      .waitlist-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
+      .waitlist-layout { grid-template-columns: 1fr; gap: 3rem; }
       .waitlist-copy .lead { max-width: 100%; }
       .product-strip { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 480px) {
       .waitlist-hero { padding: 6.5rem 1.2rem 4rem; }
       .countdown-row { gap: 0.8rem; }
@@ -363,13 +369,13 @@
         </h1>
 
         <p class="lead">
-          The adaptive hair tie designed for women with limited hand mobility. Independence shouldn't depend on who's nearby.
+          The adaptive hair tie designed for women with limited hand and shoulder mobility. Independence shouldn't depend on who's nearby.
         </p>
 
         <!-- Countdown -->
         <div class="countdown-row" id="countdown">
           <div class="countdown-unit">
-            <span class="countdown-num" id="cd-days">20</span>
+            <span class="countdown-num" id="cd-days">10</span>
             <span class="countdown-label">Days</span>
           </div>
           <span class="countdown-sep">:</span>
@@ -391,8 +397,8 @@
 
         <ul class="feature-list">
           <li>One-handed application — no assistance needed</li>
-          <li>Adaptive, flexible design for all hair types</li>
-          <li>Engineered for women with mobility disabilities</li>
+          <li>No overhead arm movement required</li>
+          <li>Designed for frozen shoulder, stroke recovery &amp; shoulder surgery</li>
           <li>Sales open June 30, 2026 — be first to know</li>
         </ul>
 
@@ -461,24 +467,20 @@
 
   <script src="script.js"></script>
   <script>
-    // Countdown to June 30, 2026 midnight ET
     function updateCountdown() {
       const target = new Date('2026-06-30T00:00:00-04:00').getTime();
       const now = Date.now();
       const diff = Math.max(0, target - now);
-
       const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const secs  = Math.floor((diff % (1000 * 60)) / 1000);
-
       const pad = n => String(n).padStart(2, '0');
       document.getElementById('cd-days').textContent  = pad(days);
       document.getElementById('cd-hours').textContent = pad(hours);
       document.getElementById('cd-mins').textContent  = pad(mins);
       document.getElementById('cd-secs').textContent  = pad(secs);
     }
-
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
