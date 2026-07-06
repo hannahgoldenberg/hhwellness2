@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HairHelper — Instructional Guide | H&H Wellness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rose: #c9705e;
+      --rose-light: #e8a598;
+      --plum: #5e2a8a;
+      --pink: #d688c0;
+      --pink-mid: #9b6ec8;
+      --ink: #1a1020;
+      --paper: #faf8f6;
+      --paper-mid: #f0ece8;
+      --text: #2a1f30;
+      --text-mid: #6b5a72;
+      --text-light: #9a8fa0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* COVER PAGE */
+    .cover {
+      min-height: 100vh;
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .cover-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 40%, rgba(94,42,138,.35) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 70%, rgba(214,136,192,.15) 0%, transparent 55%);
+    }
+
+    .cover-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(94,42,138,.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(94,42,138,.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .cover-content { position: relative; z-index: 2; max-width: 560px; }
+
+    .cover-logo {
+      font-family: 'Syncopate', sans-serif;
+      font-size: .75rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+      margin-bottom: 3rem;
+    }
+    .cover-logo span { color: var(--pink); }
+
+    .cover-product-icon { margin-bottom: 2rem; }
+
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      letter-spacing: -.01em;
+    }
+    .cover-title em { font-style: italic; color: var(--pink); }
+
+    .cover-subtitle {
+      font-size: .95rem;
+      color: rgba(255,255,255,.45);
+      letter-spacing: .06em;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .cover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      border: 1px solid rgba(214,136,192,.3);
+      border-radius: 2px;
+      padding: .5rem 1.2rem;
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 4rem;
+    }
+
+    .cover-footer {
+      position: absolute;
+      bottom: 2rem;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 3rem;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      color: rgba(255,255,255,.2);
+      z-index: 2;
+    }
+
+    /* CONTENT PAGES */
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 3rem;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--paper-mid);
+      padding-bottom: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .page-brand {
+      font-family: 'Syncopate', sans-serif;
+      font-size: .6rem;
+      letter-spacing: .2em;
+      color: var(--text-light);
+    }
+    .page-num {
+      font-size: .7rem;
+      letter-spacing: .12em;
+      color: var(--text-light);
+    }
+
+    h2.section-head {
+      font-family: 'Syncopate', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: .4rem;
+    }
+    h3.section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    h3.section-title em { font-style: italic; color: var(--plum); }
+
+    p.body { font-size: .92rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; }
+    p.body strong { color: var(--text); font-weight: 400; }
+
+    /* STEP CARDS */
+    .steps-list { display: flex; flex-direction: column; gap: 1.2rem; margin: 2rem 0; }
+    .step-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      background: var(--paper-mid);
+      border-radius: 4px;
+      padding: 1.4rem;
+      border-left: 3px solid var(--rose);
+    }
+    .step-row.release { border-left-color: var(--plum); }
+    .step-num-badge {
+      width: 36px; height: 36px;
+      background: var(--rose);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syncopate', sans-serif;
+      font-size: .65rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-row.release .step-num-badge { background: var(--plum); }
+    .step-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: .35rem;
+    }
+    .step-body p { font-size: .85rem; color: var(--text-mid); line-height: 1.7; margin: 0; }
+    .step-body .tip {
+      margin-top: .5rem;
+      font-size: .78rem;
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    /* DIAGRAM */
+    .diagram-block {
+      background: var(--ink);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .diagram-block figcaption {
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.25);
+      margin-top: 1.2rem;
+    }
+
+    /* WHO TABLE */
+    .who-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .who-table th {
+      background: var(--ink);
+      color: #fff;
+      font-family: 'Syncopate', sans-serif;
+      font-size: .6rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .8rem 1rem;
+      text-align: left;
+    }
+    .who-table td {
+      padding: .85rem 1rem;
+      font-size: .85rem;
+      color: var(--text-mid);
+      border-bottom: 1px solid var(--paper-mid);
+      vertical-align: top;
+    }
+    .who-table tr:last-child td { border-bottom: none; }
+    .who-table tr:nth-child(even) td { background: var(--paper-mid); }
+    .condition-name { font-weight: 400; color: var(--text); }
+
+    /* SAFETY NOTES */
+    .note-box {
+      border-radius: 4px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .note-box.caution { background: rgba(201,112,94,.08); border: 1px solid rgba(201,112,94,.2); }
+    .note-box.info    { background: rgba(94,42,138,.06); border: 1px solid rgba(94,42,138,.15); }
+    .note-box.good    { background: rgba(100,160,100,.06); border: 1px solid rgba(100,160,100,.2); }
+    .note-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .note-body p { font-size: .84rem; color: var(--text-mid); line-height: 1.7; margin: 0; }
+    .note-body strong { color: var(--text); font-weight: 400; }
+
+    /* CARE GUIDE */
+    .care-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .care-card {
+      background: var(--paper-mid);
+      border-radius: 4px;
+      padding: 1.2rem;
+    }
+    .care-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: .5rem;
+    }
+    .care-card ul { list-style: none; padding: 0; }
+    .care-card ul li {
+      font-size: .82rem;
+      color: var(--text-mid);
+      padding: .2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .care-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--rose-light); }
+
+    /* BACK COVER */
+    .back-cover {
+      min-height: 60vh;
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .back-cover .cover-bg { opacity: .6; }
+    .back-cover .cover-grid { opacity: .5; }
+    .back-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 1rem;
+      position: relative; z-index: 2;
+    }
+    .back-title em { font-style: italic; color: var(--pink); }
+    .back-sub {
+      font-size: .85rem;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 2rem;
+      position: relative; z-index: 2;
+    }
+    .back-url {
+      font-family: 'Syncopate', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .2em;
+      color: var(--pink);
+      position: relative; z-index: 2;
+    }
+    .back-copyright {
+      position: absolute; bottom: 1.5rem;
+      font-size: .65rem; letter-spacing: .1em;
+      color: rgba(255,255,255,.15);
+      z-index: 2;
+    }
+    .back-links {
+      display: flex; align-items: center; justify-content: center;
+      gap: .6rem; margin-bottom: 1.4rem;
+      font-size: .7rem; letter-spacing: .1em;
+      position: relative; z-index: 2;
+    }
+    .back-links a {
+      color: rgba(214,136,192,.75); text-decoration: none;
+      border-bottom: 1px solid rgba(214,136,192,.3); padding-bottom: 1px;
+      transition: color .2s;
+    }
+    .back-links a:hover { color: var(--pink); }
+    .back-links-dot { color: rgba(255,255,255,.2); }
+
+    @media print {
+      .cover, .back-cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .diagram-block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .step-num-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .who-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════ COVER ══════════════════════ -->
+<div class="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-grid"></div>
+  <div class="cover-content">
+    <div class="cover-logo">H<span>&</span>H Wellness &nbsp;·&nbsp; Empowering Health Technology</div>
+
+    <div class="cover-product-icon">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="110" height="110">
+        <defs>
+          <linearGradient id="covGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d688c0"/>
+            <stop offset="100%" stop-color="#5e2a8a"/>
+          </linearGradient>
+        </defs>
+        <!-- Outer ring = headband form factor -->
+        <ellipse cx="60" cy="50" rx="52" ry="20" fill="none" stroke="url(#covGrad)" stroke-width="3" opacity=".9"/>
+        <!-- Inner tie = scrunchie gathered -->
+        <ellipse cx="60" cy="50" rx="28" ry="11" fill="rgba(94,42,138,0.3)" stroke="url(#covGrad)" stroke-width="2"/>
+        <!-- Clasp box -->
+        <rect x="50" y="42" width="20" height="14" rx="4" fill="rgba(94,42,138,0.7)" stroke="#d688c0" stroke-width="1.5"/>
+        <!-- Cord lines -->
+        <line x1="50" y1="49" x2="20" y2="49" stroke="#d688c0" stroke-width="2" stroke-linecap="round"/>
+        <line x1="70" y1="49" x2="100" y2="49" stroke="#d688c0" stroke-width="2" stroke-linecap="round"/>
+        <!-- Hair strands below -->
+        <path d="M45 70 Q38 90 36 108" fill="none" stroke="rgba(214,136,192,0.5)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M60 70 Q60 90 60 110" fill="none" stroke="rgba(214,136,192,0.4)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M75 70 Q82 90 84 108" fill="none" stroke="rgba(214,136,192,0.35)" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Head silhouette above -->
+        <ellipse cx="60" cy="28" rx="16" ry="20" fill="none" stroke="rgba(214,136,192,0.25)" stroke-width="1.2"/>
+      </svg>
+    </div>
+
+    <h1 class="cover-title">Hair<em>Helper</em></h1>
+    <p class="cover-subtitle">
+      The world's first adaptive hair tie<br/>for women with shoulder mobility limitations
+    </p>
+    <div class="cover-badge">
+      <span>✦</span>
+      <span>Instructional Guide</span>
+      <span>·</span>
+      <span>Patent Pending</span>
+    </div>
+  </div>
+  <div class="cover-footer">
+    <span>H&H Wellness &copy; 2026</span>
+    <span>hhwellness.live</span>
+    <span>For Personal Use Only</span>
+  </div>
+</div>
+
+<!-- ══════════════════════ PAGE 2: ABOUT ══════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-brand">HairHelper · H&H Wellness</span>
+    <span class="page-num">01 / About This Product</span>
+  </div>
+
+  <h2 class="section-head">Overview</h2>
+  <h3 class="section-title">What Is <em>HairHelper</em>?</h3>
+
+  <p class="body">
+    HairHelper is a patent-pending adaptive hair tie developed by H&H Wellness, a women's health technology company founded by siblings Hannah and Harrison. It is the world's first hair accessory specifically designed to allow women with <strong>limited shoulder mobility</strong> to style their own hair — independently, without assistance, and without pain.
+  </p>
+  <p class="body">
+    HairHelper functions as a <strong>hybrid between a scrunchie and a headband</strong>. It is worn and positioned like a headband, then secured using a one-touch clasp-and-cord mechanism that requires no overhead arm movement and minimal hand dexterity.
+  </p>
+  <p class="body">
+    The result is a dignified, practical daily living aid that restores independence at one of the most personal moments of self-care.
+  </p>
+
+  <div class="diagram-block">
+    <svg viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:580px">
+      <defs>
+        <linearGradient id="dg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#d688c0"/>
+          <stop offset="100%" stop-color="#5e2a8a"/>
+        </linearGradient>
+      </defs>
+      <!-- Product anatomy labels -->
+      <!-- Outer band -->
+      <ellipse cx="300" cy="60" rx="130" ry="45" fill="none" stroke="url(#dg)" stroke-width="2.5" opacity=".8"/>
+      <text x="145" y="20" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.45)" text-anchor="middle">Headband Ring</text>
+      <line x1="160" y1="24" x2="180" y2="36" stroke="rgba(214,136,192,0.3)" stroke-width="1"/>
+
+      <!-- Inner scrunchie -->
+      <ellipse cx="300" cy="60" rx="72" ry="25" fill="rgba(94,42,138,0.3)" stroke="rgba(214,136,192,0.7)" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="300" y="100" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.45)" text-anchor="middle">Scrunchie Body</text>
+      <line x1="300" y1="96" x2="300" y2="88" stroke="rgba(214,136,192,0.3)" stroke-width="1"/>
+
+      <!-- Clasp -->
+      <rect x="278" y="49" width="44" height="24" rx="5" fill="rgba(94,42,138,0.8)" stroke="#d688c0" stroke-width="1.5"/>
+      <text x="300" y="65" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.8)" text-anchor="middle">CLASP</text>
+
+      <!-- Left cord -->
+      <line x1="278" y1="61" x2="200" y2="61" stroke="#d688c0" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="200" cy="61" r="5" fill="rgba(94,42,138,0.6)" stroke="#d688c0" stroke-width="1.2"/>
+      <text x="200" y="80" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.45)" text-anchor="middle">Cord</text>
+
+      <!-- Right cord -->
+      <line x1="322" y1="61" x2="400" y2="61" stroke="#d688c0" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="400" cy="61" r="5" fill="rgba(94,42,138,0.6)" stroke="#d688c0" stroke-width="1.2"/>
+      <text x="400" y="80" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,255,255,0.45)" text-anchor="middle">Cord</text>
+
+      <!-- Press arrow -->
+      <path d="M300 42 L300 34" stroke="rgba(214,136,192,0.7)" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M296 37 L300 33 L304 37" fill="none" stroke="rgba(214,136,192,0.9)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180,300,35)"/>
+      <text x="300" y="25" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(214,136,192,0.6)" text-anchor="middle">Press to activate</text>
+    </svg>
+    <figcaption>HairHelper — product anatomy overview</figcaption>
+  </div>
+
+  <h3 class="section-title" style="font-size:1.4rem;margin-top:2rem;">Key Features</h3>
+  <div class="note-box good">
+    <span class="note-icon">✓</span>
+    <div class="note-body">
+      <p><strong>No overhead arm movement required.</strong> Designed for women who cannot raise their arms above shoulder level without pain or restriction.</p>
+    </div>
+  </div>
+  <div class="note-box good">
+    <span class="note-icon">✓</span>
+    <div class="note-body">
+      <p><strong>One-touch tightening mechanism.</strong> A single press-and-pull motion secures hair at the crown — no looping, no threading, no dexterity-intensive steps.</p>
+    </div>
+  </div>
+  <div class="note-box good">
+    <span class="note-icon">✓</span>
+    <div class="note-body">
+      <p><strong>Scrunchie-headband hybrid form.</strong> Comfortable on the hair, gentle against the scalp, and designed to hold securely without breakage.</p>
+    </div>
+  </div>
+  <div class="note-box good">
+    <span class="note-icon">✓</span>
+    <div class="note-body">
+      <p><strong>Easy release.</strong> One press of the clasp loosens the tie — no tugging, pulling, or struggling to remove.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ PAGE 3: HOW TO USE ══════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-brand">HairHelper · H&H Wellness</span>
+    <span class="page-num">02 / How to Use</span>
+  </div>
+
+  <h2 class="section-head">Application</h2>
+  <h3 class="section-title">Step-by-Step <em>Instructions</em></h3>
+
+  <p class="body">Follow these steps each time you apply HairHelper. The process is designed to be completed without assistance and with minimal arm elevation.</p>
+
+  <div class="steps-list">
+    <div class="step-row">
+      <div class="step-num-badge">01</div>
+      <div class="step-body">
+        <h4>Hold HairHelper at face level</h4>
+        <p>Hold HairHelper in both hands at chest or face height — no need to raise your arms above your head. The headband ring should face outward, like a large oval hoop.</p>
+        <p class="tip">Tip: If you have limited use of one hand, you can brace HairHelper against a surface to position it.</p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num-badge">02</div>
+      <div class="step-body">
+        <h4>Slip it over your head like a headband</h4>
+        <p>Bring HairHelper over your head from front to back — just as you would put on a regular headband. Let it rest at the back of your neck or on your shoulders initially. Your hair should be loose and down.</p>
+        <p class="tip">Tip: A gentle forward tilt of your head makes this easier, allowing gravity to help position it.</p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num-badge">03</div>
+      <div class="step-body">
+        <h4>Slide HairHelper up to the crown</h4>
+        <p>Use both hands (or one hand) to guide HairHelper upward from the back of your neck toward the top of your head. As it moves up, it will naturally gather your hair. Stop when it sits at or just above the crown of your head.</p>
+        <p class="tip">Tip: Look slightly downward as you slide it up — this natural head position requires the least arm elevation.</p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num-badge">04</div>
+      <div class="step-body">
+        <h4>Press the clasp and pull the cords</h4>
+        <p>Locate the clasp mechanism at the top of HairHelper. Press down on the clasp with one or two fingers to activate it. While pressing, use your other hand (or the same hand) to pull the cords outward in both directions simultaneously — this tightens the scrunchie body around your hair.</p>
+        <p class="tip">Tip: Pull the cords until you feel the hair is comfortably secured — you don't need to pull hard.</p>
+      </div>
+    </div>
+
+    <div class="step-row" style="border-left-color:#5e2a8a">
+      <div class="step-num-badge" style="background:#5e2a8a">✓</div>
+      <div class="step-body">
+        <h4>Your hair is styled — independently</h4>
+        <p>HairHelper is now securely in place. Your ponytail or updo is held at the crown without any overhead stretching, repeated looping, or assistance needed.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-head" style="margin-top:2rem;">Release</h2>
+  <h3 class="section-title" style="font-size:1.4rem;">How to Remove HairHelper</h3>
+
+  <div class="steps-list">
+    <div class="step-row release">
+      <div class="step-num-badge">01</div>
+      <div class="step-body">
+        <h4>Press the clasp mechanism</h4>
+        <p>Press down on the clasp at the top of HairHelper. You will feel or hear a soft click indicating the cords are unlocked.</p>
+      </div>
+    </div>
+    <div class="step-row release">
+      <div class="step-num-badge">02</div>
+      <div class="step-body">
+        <h4>Pull gently to loosen</h4>
+        <p>While pressing the clasp, gently pull the cord ends — the scrunchie body will loosen around your hair. You don't need to tug; a light, steady pull is all it takes.</p>
+      </div>
+    </div>
+    <div class="step-row release">
+      <div class="step-num-badge">03</div>
+      <div class="step-body">
+        <h4>Slide HairHelper off</h4>
+        <p>Once loosened, slide HairHelper forward and off your head — the same motion as removing a headband. Store it flat or looped to maintain its shape.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ PAGE 4: WHO IT'S FOR ══════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-brand">HairHelper · H&H Wellness</span>
+    <span class="page-num">03 / Who HairHelper Helps</span>
+  </div>
+
+  <h2 class="section-head">Designed For</h2>
+  <h3 class="section-title">Conditions <em>HairHelper</em> Addresses</h3>
+
+  <p class="body">HairHelper was developed to address a genuine gap in adaptive daily living tools. Below are the primary conditions for which it was designed, along with how it helps.</p>
+
+  <table class="who-table">
+    <thead>
+      <tr>
+        <th>Condition</th>
+        <th>How HairHelper Helps</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="condition-name">Frozen Shoulder (Adhesive Capsulitis)</span></td>
+        <td>Eliminates the need for any overhead shoulder movement. The entire application process stays below shoulder height.</td>
+      </tr>
+      <tr>
+        <td><span class="condition-name">Post-Stroke Hemiplegia / Arm Weakness</span></td>
+        <td>Designed to be operated with one functioning arm or hand. Minimal bilateral coordination required for application.</td>
+      </tr>
+      <tr>
+        <td><span class="condition-name">Shoulder Surgery Recovery (Rotator Cuff, Replacement)</span></td>
+        <td>Works within post-operative restricted range-of-motion guidelines — no arm elevation above a comfortable level needed.</td>
+      </tr>
+      <tr>
+        <td><span class="condition-name">Spinal Cord Injury (Cervical / Thoracic)</span></td>
+        <td>Reduced dexterity requirements and low arm elevation make HairHelper compatible with a range of upper limb functional levels.</td>
+      </tr>
+      <tr>
+        <td><span class="condition-name">Shoulder Impingement / Chronic Pain</span></td>
+        <td>Removes the repetitive overhead motion that triggers impingement symptoms during traditional hair tie use.</td>
+      </tr>
+      <tr>
+        <td><span class="condition-name">General Limited Mobility / Arthritis</span></td>
+        <td>Low-force clasp mechanism and smooth gliding application reduce demands on joints and muscles throughout the hand, wrist, and shoulder.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note-box info" style="margin-top:2rem;">
+    <span class="note-icon">ℹ</span>
+    <div class="note-body">
+      <p><strong>For Occupational Therapists:</strong> HairHelper may qualify as an Activities of Daily Living (ADL) adaptive aid. We welcome clinical feedback and OT consultation as we develop future iterations. Contact us at hhwellness.live.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════ PAGE 5: CARE & SAFETY ══════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-brand">HairHelper · H&H Wellness</span>
+    <span class="page-num">04 / Care & Safety</span>
+  </div>
+
+  <h2 class="section-head">Care Instructions</h2>
+  <h3 class="section-title">Keeping Your <em>HairHelper</em> in Top Condition</h3>
+
+  <div class="care-grid">
+    <div class="care-card">
+      <h4>✓ Do</h4>
+      <ul>
+        <li>Hand wash gently with mild soap and lukewarm water</li>
+        <li>Air dry flat away from direct heat or sunlight</li>
+        <li>Store flat or loosely coiled to preserve the band shape</li>
+        <li>Inspect the clasp mechanism regularly for smooth operation</li>
+        <li>Keep away from sharp objects that may snag the fabric</li>
+      </ul>
+    </div>
+    <div class="care-card">
+      <h4>✗ Avoid</h4>
+      <ul>
+        <li>Machine washing or tumble drying</li>
+        <li>Soaking in water for extended periods</li>
+        <li>Exposing the clasp mechanism to hair products or sprays</li>
+        <li>Overstretching the band beyond its natural range</li>
+        <li>Leaving in direct sunlight for long periods</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="section-head" style="margin-top:2.5rem;">Safety Notes</h2>
+  <h3 class="section-title" style="font-size:1.4rem;">Important <em>Information</em></h3>
+
+  <div class="note-box caution">
+    <span class="note-icon">⚠</span>
+    <div class="note-body">
+      <p><strong>Consult your healthcare provider.</strong> If you are recovering from surgery or a medical procedure, please confirm with your physician or occupational therapist that using HairHelper is appropriate for your current recovery stage and range-of-motion restrictions.</p>
+    </div>
+  </div>
+
+  <div class="note-box caution">
+    <span class="note-icon">⚠</span>
+    <div class="note-body">
+      <p><strong>Stop if you experience pain.</strong> HairHelper is designed to be pain-free to use. If you feel pain or discomfort at any point during application or removal, stop immediately and speak with your healthcare provider.</p>
+    </div>
+  </div>
+
+  <div class="note-box info">
+    <span class="note-icon">ℹ</span>
+    <div class="note-body">
+      <p><strong>For medium to long hair.</strong> HairHelper is designed to work with medium to long hair lengths. Results may vary for very short or very fine hair. Additional sizing options are being developed.</p>
+    </div>
+  </div>
+
+  <div class="note-box info">
+    <span class="note-icon">ℹ</span>
+    <div class="note-body">
+      <p><strong>Patent Pending.</strong> HairHelper's design and mechanism are protected by a pending patent held by H&H Wellness. Reproduction or commercial copying is prohibited.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--paper-mid);">
+    <p class="body" style="font-size:.8rem;color:var(--text-light);">
+      For questions, support, or clinical inquiries, visit <strong>hhwellness.live</strong> or reach out through the contact form on our website. We welcome feedback from users, caregivers, and healthcare providers — your experience helps us improve.
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════ BACK COVER ══════════════════════ -->
+<div class="back-cover">
+  <div class="cover-bg"></div>
+  <div class="cover-grid"></div>
+  <h2 class="back-title">Restoring <em>independence</em>,<br/>one small act at a time.</h2>
+  <p class="back-sub">H&H Wellness · Empowering Women's Health Technology</p>
+  <div class="back-url">hhwellness.live</div>
+  <div class="back-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <span class="back-links-dot">·</span>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+  <p class="back-copyright">&copy; 2026 H&H Wellness. All rights reserved. Patent Pending.</p>
+</div>
+
+</body>
+</html>

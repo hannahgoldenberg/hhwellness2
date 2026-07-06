@@ -303,6 +303,16 @@ footer {
   z-index: 2;
   background: var(--bg);
 }
+.footer-links {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.6rem; margin-bottom: 0.8rem;
+}
+.footer-links a {
+  color: var(--text-muted); text-decoration: none; letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--pink-deep); }
+.footer-dot { color: var(--text-faint); }
 
 /* =============================================
    HERO (INDEX)
