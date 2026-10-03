@@ -301,10 +301,9 @@
 
   <script src="script.js"></script>
   <script>
-    const STRIPE_LINK = "https://buy.stripe.com/3cI3cv6GFgh3bc1eJi97G00";
     const RECAPTCHA_SITE_KEY = "6LdCA9wtAAAAAGNavmMPYLyifAAP5P32iwLV4yex";
-    // Optional: URL of a server endpoint that verifies the token with Google (see notes).
-    // Leave empty until that endpoint exists. When set, the page only redirects to Stripe if the server approves.
+    // Paste your Cloudflare Worker URL here, e.g. "https://hh-verify.yourname.workers.dev"
+    // The Worker verifies the reCAPTCHA token and returns the Stripe link only after a good score.
     const VERIFY_ENDPOINT = "https://hh-verify.hannahgoldenberg36.workers.dev/";
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -320,17 +319,17 @@
             await new Promise(resolve => grecaptcha.enterprise.ready(resolve));
             const token = await grecaptcha.enterprise.execute(RECAPTCHA_SITE_KEY, { action: 'submit' });
 
-            if (VERIFY_ENDPOINT) {
-              const res = await fetch(VERIFY_ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token, action: 'submit' })
-              });
-              const data = await res.json();
-              if (!res.ok || !data.ok) throw new Error('Verification failed');
-            }
+            if (!VERIFY_ENDPOINT) throw new Error('VERIFY_ENDPOINT is not set');
 
-            window.location.href = STRIPE_LINK;
+            const res = await fetch(VERIFY_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ token, action: 'submit' })
+            });
+            const data = await res.json();
+            if (!res.ok || !data.ok || !data.url) throw new Error('Verification failed');
+
+            window.location.href = data.url;
           } catch (err) {
             console.error(err);
             alert("We couldn't verify your request. Please refresh the page and try again.");
